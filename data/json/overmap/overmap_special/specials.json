@@ -963,7 +963,6 @@
   {
     "type": "overmap_special",
     "id": "Alcatraz Prison",
-	"//": "TODO:  range, size",
     "overmaps": [
       { "point": [ -1, -1, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, -1, 0 ], "overmap": "lake_surface" },
@@ -1380,7 +1379,7 @@
   {
     "type": "overmap_special",
     "id": "Toxic Waste Dump",
-	"//": "TODO: Occurance, range, size",
+	"//": "TODO: range, size, Connection?",
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "toxic_dump_north" } ],
     "locations": [ "land" ],
     "city_distance": [ 20, -1 ],
@@ -3601,7 +3600,7 @@
       { "point": [ 0, 0, 1 ], "overmap": "roadstop_a_roof_north" }
     ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "existing": true } ],
-    "locations": [ "land" ],
+    "locations": [ "land"  ],
     "city_distance": [ 10, 200 ],
     "occurrences": [ 0, 4 ],
     "flags": [ "CLASSIC", "WILDERNESS" ]
@@ -4170,7 +4169,7 @@
   {
     "type": "overmap_special",
     "id": "bandit_garage",
-	"//": "TODO: Occurance, range, size",
+	"//": "TODO: Connection!, range, size",
     "overmaps": [
       { "point": [ 0, 0, 0 ], "overmap": "bandit_garage_1_north" },
       { "point": [ 1, 0, 0 ], "overmap": "bandit_garage_2_north" }
@@ -4233,7 +4232,7 @@
   {
     "type": "overmap_special",
     "id": "Movie Theater",
-	"//": "TODO: Occurance, range, size",
+	"//": "TODO: Occurance, range, size, move to cities down the line",
     "overmaps": [
       { "point": [ 0, 0, 0 ], "overmap": "movietheater_0_0_north" },
       { "point": [ 0, 0, 1 ], "overmap": "movietheater_roof_0_0_north" },
@@ -4264,7 +4263,7 @@
   {
     "type": "overmap_special",
     "id": "Trailer Park",
-	"//": "TODO: Occurance, range, size",
+	"//": "TODO: Occurance, range, size, move to cities",
     "overmaps": [
       { "point": [ 0, 0, 0 ], "overmap": "trailerparksmall0_north" },
       { "point": [ 1, 0, 0 ], "overmap": "trailerparksmall1_north" },
