@@ -17,8 +17,8 @@
       { "point": [ 0, 0, 1 ], "overmap": "motel_twd_second_floor_north" }
     ],
     "connections": [
-      { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 0, 0, 0 ] },
-      { "point": [ 1, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 1, 0, 0 ] }
+      { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "existing": true, "from": [ 0, 0, 0 ] },
+      { "point": [ 1, -1, 0 ], "terrain": "road", "connection": "local_road", "existing": true, "from": [ 1, 0, 0 ] }
     ],
     "locations": [ "land" ],
     "city_distance": [ 8, 30 ],
@@ -50,7 +50,7 @@
     "type": "overmap_special",
     "id": "Boat Rental",
 	"//": "TODO: Occurance, range, size",
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "boat_rental_north" } ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "boat_rental_north", "connection": "local_road" } ],
     "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road" } ],
     "locations": [ "water" ],
     "city_distance": [ 5, 15 ],
