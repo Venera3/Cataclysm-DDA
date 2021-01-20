@@ -198,7 +198,7 @@
       { "point": [ 1, 2, -1 ], "terrain": "sewer", "connection": "sewer_tunnel", "from": [ 1, 1, -1 ] }
     ],
     "city_distance": [ 5, 25 ],
-    "city_sizes": [ 6, -1 ],
+    "city_sizes": [ 4, -1 ],
     "occurrences": [ 0, 4 ],
     "flags": [ "CLASSIC", "URBAN" ]
   },
@@ -3465,6 +3465,7 @@
     "id": "campsite",
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "campsite_north" } ],
     "locations": [ "forest" ],
+	
     "city_distance": [ 20, -1 ],
     "city_sizes": [ 4, -1 ],
     "occurrences": [ 0, 2 ],
