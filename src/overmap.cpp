@@ -1461,7 +1461,7 @@ void overmap::generate( const overmap *north, const overmap *east,
     }
 
     dbg( D_INFO ) << "overmap::generate start…";
-
+    debugmsg("Started a new overmap");
     populate_connections_out_from_neighbors( north, east, south, west );
 
     place_rivers( north, east, south, west );
@@ -4097,14 +4097,17 @@ void overmap::place_special(
     }
 
     const bool blob = special.flags.count( "BLOB" ) > 0;
-
+    static std::string previd = "null";
     for( const auto &elem : special.terrains ) {
         const tripoint_om_omt location = p + om_direction::rotate( elem.p, dir );
         const oter_id tid = elem.terrain->get_rotated( dir );
 
         overmap_special_placements[location] = special.id;
         ter_set( location, tid );
-
+        if (special.id.c_str() != previd) {
+            debugmsg("Placed a %s.", special.id.c_str());
+            previd = special.id.c_str();
+        }
         if( blob ) {
             for( int x = -2; x <= 2; x++ ) {
                 for( int y = -2; y <= 2; y++ ) {
