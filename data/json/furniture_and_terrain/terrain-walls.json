@@ -1159,6 +1159,26 @@
   },
   {
     "type": "terrain",
+    "id": "t_paper_hard",
+    "name": "layered paper wall",
+    "description": "A thick wall of layered tree pulp and wasp saliva, hardened to withstand the elements.  You could break through this, but it won't be easy.",
+    "symbol": "#",
+    "color": "dark_gray",
+    "move_cost": 0,
+    "coverage": 100,
+    "flags": [ "FLAMMABLE_HARD", "NOITEM", "MINEABLE", "WALL", "NO_SCENT" ],
+    "bash": {
+      "str_min": 15,
+      "str_max": 150,
+      "sound": "rrrrip!",
+      "sound_fail": "slap!",
+      "sound_vol": 8,
+      "sound_fail_vol": 4,
+      "ter_set": "t_null"
+    }
+  },
+  {
+    "type": "terrain",
     "id": "t_root_wall",
     "name": "root wall",
     "looks_like": "t_rock",

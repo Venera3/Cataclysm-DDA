@@ -867,5 +867,27 @@
       "sound_fail_vol": 4,
       "ter_set": "t_dirt"
     }
+  },
+  {
+    "type": "terrain",
+    "id": "t_floor_paper_hard",
+    "name": "paper floor",
+    "description": "Hardened cardboard floor made of chewed up trees and resin mixed with wasp saliva.",
+    "symbol": ".",
+    "looks_like": "t_floor_paper",
+    "color": "white",
+    "move_cost": 2,
+    "roof": "t_roof_paper",
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "INDOORS", "FLAT" ],
+    "bash": {
+      "str_min": 6,
+      "str_max": 150,
+	  "str_min_supported": 15,
+      "sound": "rrrrip!",
+      "sound_fail": "slap!",
+      "sound_vol": 8,
+      "sound_fail_vol": 4,
+      "ter_set": "t_null"
+    }
   }
 ]

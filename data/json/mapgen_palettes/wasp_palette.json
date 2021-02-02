@@ -1,0 +1,28 @@
+[
+  {
+    "type": "palette",
+    "id": "wasp_palette",
+    "terrain": {
+	  "x": "t_paper",
+	  "X": "t_paper_hard",
+      "_": "t_floor_paper_hard",
+	  ".": "t_floor_paper",
+	  "R": "t_radio_tower",
+	  "a": "t_railing",
+	  ",": "t_metal_floor_no_roof",
+	  "<": "t_stairs_up",
+	  ">": "t_stairs_down",
+      ":": "t_null",
+      "#": "t_grate",
+	  "O": "t_null"
+    },
+    "furniture": {
+      ":": "f_cellphone_booster",
+      "#": "f_small_satelitte_dish",
+	  "O": "f_egg_sackcs"
+    },
+	"monster": {
+	  "O": { "group": "GROUP_ANT", "chance": 100 }
+	}
+  }
+]
