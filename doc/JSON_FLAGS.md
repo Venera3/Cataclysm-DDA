@@ -991,6 +991,7 @@ Other monster flags.
 - ```RIDEABLE_MECH``` This monster is a mech suit that can be piloted.
 - ```SEES``` It can see you (and will run/follow).
 - ```SHEARABLE``` This monster can be sheared for wool.
+- ```SHORTACIDTRAIL``` This monster has a 1-in-5 chance of leaving an acid puddle when moving.
 - ```SLUDGEPROOF``` Ignores the effect of sludge trails.
 - ```SLUDGETRAIL``` Causes the monster to leave a sludge trap trail when moving.
 - ```SMELLS``` It can smell you.
