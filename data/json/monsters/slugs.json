@@ -35,41 +35,89 @@
     "name": { "str": "large slug" },
     "description": "A disturbingly large mutated slug as large as a human.  Venom drips from something like a mouth and it is covered with sticky mucus.",
     "copy-from": "mon_slug_giant",
-    "looks_like": "mon_worm",
-    "volume": "62500 ml",
-    "weight": "81500 g",
-    "proportional": { "hp": 0.4, "speed": 1.1, "morale": 0.67, "melee_dice_sides": 0.67 },
-    "upgrades": { "half_life": 14, "into": "mon_slug_giant" }
+    "volume": "100 L",
+    "weight": "81 kg",
+	"hp": 120,
+	"speed": 80,
+	"attack_cost": 80,
+	"melee_dice": 4,
+	"melee_damage": [
+	  { 
+ 	   "damage_type": "acid",
+	   "amount": 3
+	  }
+	],
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": { "id": "acid_cone", "min_level": 0 },
+        "monster_message": "The slug pauses, then barfs a stream of acid!",
+        "cooldown": 10
+      },
+	  {
+	    "id": "nibble",
+		"min_mul": 0.2,
+		"max_mul": 0.8,
+		"//": "4-16 dmg, half cut/acid, 10s corrosion" 
+	  }
+	 ],
+    "armor_bash": 15,
+	"armor_cut": 7,
+	"armor_stab": 5,
+	"armor_bullet": 5,
+	"upgrades": { "age_grow": 21, "into": "mon_slug_giant" },
+	"extend": { "flags": [ "SHORTACIDTRAIL", "DESTROYS" ] },
+	"delete": { "flags": [ "BORES", "ACIDTRAIL" ] }
   },
   {
     "id": "mon_slug_giant",
     "type": "MONSTER",
     "name": { "str": "giant slug" },
-    "description": "A mutated leopard slug, as wide as a golf cart.  Venom dripping from its fanged maw, it slithers ahead slowly, leaving a trail of glistening slime.",
+    "description": "A mutated leopard slug, as wide as a golf cart.  Its already disgusting slime seems to discolor the ground with a faint sizzle.",
     "default_faction": "slug",
     "species": [ "MOLLUSK" ],
-    "diff": 5,
-    "volume": "875000 ml",
-    "weight": "200 kg",
-    "hp": 190,
+    "volume": "450 L",
+    "weight": "300 kg",
+    "hp": 350,
     "speed": 60,
+	"attack_cost": 60,
     "material": [ "flesh" ],
     "symbol": "S",
     "color": "brown",
     "aggression": 20,
-    "morale": 100,
-    "melee_skill": 4,
-    "melee_dice": 1,
-    "melee_dice_sides": 5,
-    "melee_cut": 1,
-    "armor_bash": 8,
-    "armor_cut": 2,
-    "armor_bullet": 2,
-    "vision_day": 30,
+    "morale": 80,
+    "melee_skill": 5,
+    "melee_dice": 6,
+    "melee_dice_sides": 3,
+	"melee_damage":[
+	 {
+	   "damage_type": "acid",
+	   "amount": 6
+	 }
+	],
+    "special_attacks": [
+      {
+        "type": "spell",
+        "spell_data": { "id": "acid_cone", "min_level": 1 },
+        "monster_message": "The slug pauses, then barfs a stream of acid!",
+        "cooldown": 8
+      },
+	  {
+	    "id": "nibble",
+		"min_mul": 0.6,
+		"max_mul": 1.0,
+		"//": "10-20 dmg, 50/50 cut/acid, 10s corrosion" 
+	  }
+	 ],
+    "armor_bash": 30,
+    "armor_cut": 10,
+	"armor_stab": 15,
+    "armor_bullet": 12,
+    "vision_day": 20,
+	"vision_night": 15,
     "harvest": "mutant_meatslug",
-    "special_attacks": [ [ "ACID", 10 ] ],
     "anger_triggers": [ "PLAYER_CLOSE" ],
     "death_function": [ "NORMAL" ],
-    "flags": [ "SEES", "SMELLS", "BASHES", "ACIDPROOF", "ACIDTRAIL", "ARTHROPOD_BLOOD" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "BORES", "ACID_BLOOD", "ACIDPROOF", "ACIDTRAIL" ]
   }
 ]

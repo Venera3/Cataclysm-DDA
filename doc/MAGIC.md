@@ -399,12 +399,13 @@ Spell types:
 You can assign a spell as a special attack for a monster.
 
 ```json
-{ "type": "spell", "spell_id": "burning_hands", "spell_level": 10, "cooldown": 10 }
+{ "type": "spell", "spell_data": { "id": "burning_hands", "min_level": 2 } "cooldown": 10, "monster_message": "This is an example" }
 ```
 
-* spell_id: the id for the spell being cast.
-* spell_level: the level at which the spell is cast. Spells cast by monsters do not gain levels like player spells.
+* id: the id for the spell being cast.
+* min_level: the level at which the spell is cast. Spells cast by monsters do not gain levels like player spells.
 * cooldown: how often the monster can cast this spell
+* monster_message: the message to print when the monster casts this spell
 
 ### Enchantments
 | Identifier                  | Description
