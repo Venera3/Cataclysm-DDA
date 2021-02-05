@@ -82,6 +82,26 @@
     "no_dmg_msg_npc": "The %1$s tries to slam into <npcname>, but fails to."
   },
   {
+    "type": "monster_attack",
+	"attack_type": "melee",
+	"id": "nibble",
+	"cooldown": 5,
+	"move_cost": 120,
+	"damage_max_instance": [
+	{ "damage_type": "cut", "amount": 10 },
+	{ "damage_type": "acid", "amount": 10 }
+	],
+	"body_parts": [
+	 ["head", 1 ],
+	 [ "arm_l", 2 ],
+	 [ "arm_r", 2 ],
+	 [ "torso", 4 ],
+	 [ "leg_l", 3 ],
+	 [ "leg_r", 3 ]
+	],
+	"effects": [ { "id": "corroding", "affect_hit_bp": true, "duration": 10 } ]
+  },
+  {
     "id": "acid_spray",
     "type": "GUN",
     "copy-from": "fake_item",
