@@ -887,7 +887,7 @@
     "locations": [ "land" ],
     "city_distance": [ 0, 20 ],
     "occurrences": [ 5, 5 ],
-	"spawns": { "group": "GROUP_WASP", "population": [ 500, 1000 ], "radius": [ 2, 50 ] },
+	"spawns": { "group": "GROUP_NULL", "population": [ 500, 1000 ], "radius": [ 2, 50 ] },
     "flags": [ "CLASSIC", "WILDERNESS" ]
   },
   {

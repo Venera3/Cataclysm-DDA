@@ -1154,7 +1154,7 @@
       "sound_fail": "slap!",
       "sound_vol": 8,
       "sound_fail_vol": 4,
-      "ter_set": "t_null"
+      "ter_set": "t_floor_paper"
     }
   },
   {
@@ -1166,7 +1166,7 @@
     "color": "dark_gray",
     "move_cost": 0,
     "coverage": 100,
-    "flags": [ "FLAMMABLE_HARD", "NOITEM", "MINEABLE", "WALL", "NO_SCENT" ],
+    "flags": [ "FLAMMABLE_HARD", "NOITEM", "MINEABLE", "SUPPORTS_ROOF", "WALL", "NO_SCENT" ],
     "bash": {
       "str_min": 15,
       "str_max": 150,
@@ -1174,7 +1174,7 @@
       "sound_fail": "slap!",
       "sound_vol": 8,
       "sound_fail_vol": 4,
-      "ter_set": "t_null"
+      "ter_set": "t_floor_paper_hard"
     }
   },
   {
