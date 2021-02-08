@@ -870,6 +870,26 @@
   },
   {
     "type": "terrain",
+    "id": "t_floor_paper_noroof",
+    "name": "paper floor",
+    "description": "Floor made of pulpy mass, covered in sticky wasp saliva.",
+    "symbol": ".",
+    "looks_like": "t_dirt",
+    "color": "white",
+    "move_cost": 2,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "INDOORS", "FLAT", "ROAD" ],
+    "bash": {
+      "str_min": 1,
+      "str_max": 6,
+      "sound": "rrrrip!",
+      "sound_fail": "slap!",
+      "sound_vol": 8,
+      "sound_fail_vol": 4,
+      "ter_set": "t_open_air"
+    }
+  },
+  {
+    "type": "terrain",
     "id": "t_floor_paper_hard",
     "name": "paper floor",
     "description": "Hardened cardboard floor made of chewed up trees and resin mixed with wasp saliva.",
@@ -886,7 +906,7 @@
       "sound_fail": "slap!",
       "sound_vol": 10,
       "sound_fail_vol": 6,
-      "ter_set": "t_null"
+      "ter_set": "t_open_air"
     }
   },
   {
@@ -898,7 +918,7 @@
     "symbol": ".",
     "color": "white",
     "move_cost": 2,
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "INDOORS" ],
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "INDOORS", "NO_FLOOR" ],
     "bash": {
       "str_min": 1,
       "str_max": 6,
@@ -906,7 +926,21 @@
       "sound_fail": "slap!",
       "sound_vol": 8,
       "sound_fail_vol": 4,
-      "ter_set": "t_null"
+      "ter_set": "t_open_air"
     }
+  },  
+  {
+    "type": "terrain",
+    "id": "t_floor_brood_fake",
+    "name": "open air",
+    "description": "This is open air.",
+	"//": "Actually, this is a thin membrane of bullshit to keep wasp eggs levitating.",
+    "symbol": " ",
+	"looks_like": "t_open_air",
+    "color": "i_cyan",
+    "move_cost": 2,
+    "trap": "tr_ledge",
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "ledge"
   }
 ]

@@ -171,14 +171,7 @@
         "     XXXX     XXXX      ",
         "        XXXXXXX         "
       ],
-      "palettes": [ "wasp_palette" ],
-      "place_nested": [
-        {
-          "chunks": [ [ "null", 40 ], [ "radio_tower_2x2_map", 40 ], [ "radio_tower_2x2_holdout", 10 ], [ "radio_tower_2x2_sniper", 10 ] ],
-          "x": 10,
-          "y": 5
-        }
-      ]
+      "palettes": [ "wasp_palette" ]
     }
   },
   {
@@ -213,25 +206,7 @@
         "     *************      ",
         "        *******         "
       ],
-	  "palettes": [ "wasp_palette" ],
-	  "terrain": { "ó": "t_roof_paper_hard"}
-    }
-  },	
-  {
-    "type": "mapgen",
-    "method": "json",
-    "nested_mapgen_id": "radio_tower_2x2_holdout",
-    "object": {
-      "mapgensize": [ 2, 2 ],
-      "place_furniture": [ { "furn": "f_camp_chair", "x": 1, "y": 0 }, { "furn": "f_makeshift_bed", "x": 1, "y": 1 } ],
-      "place_loot": [
-        { "group": "camping", "x": 1, "y": [ 0, 1 ], "chance": 50, "repeat": [ 2, 3 ] },
-        { "item": "blanket", "x": 1, "y": [ 0, 1 ], "chance": 50, "repeat": [ 1, 2 ] },
-        { "item": "can_drink", "x": 1, "y": [ 0, 1 ], "chance": 30, "repeat": [ 2, 3 ] },
-        { "item": "can_food", "x": 1, "y": [ 0, 1 ], "chance": 40, "repeat": [ 2, 3 ] },
-        { "item": "can_food", "x": 1, "y": [ 0, 1 ], "chance": 40, "repeat": [ 2, 3 ] },
-        { "item": "sleeping_bag", "x": 1, "y": 1, "chance": 40 }
-      ]
+	  "palettes": [ "wasp_palette" ]
     }
   },
   {
