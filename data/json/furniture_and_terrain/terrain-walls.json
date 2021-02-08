@@ -1168,12 +1168,12 @@
     "coverage": 100,
     "flags": [ "FLAMMABLE_HARD", "NOITEM", "MINEABLE", "SUPPORTS_ROOF", "WALL", "NO_SCENT" ],
     "bash": {
-      "str_min": 15,
+      "str_min": 30,
       "str_max": 150,
       "sound": "rrrrip!",
       "sound_fail": "slap!",
-      "sound_vol": 8,
-      "sound_fail_vol": 4,
+      "sound_vol": 20,
+      "sound_fail_vol": 10,
       "ter_set": "t_floor_paper_hard"
     }
   },

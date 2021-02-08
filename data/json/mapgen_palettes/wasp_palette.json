@@ -15,7 +15,7 @@
 	  ">": "t_stairs_down",
       ":": "t_null",
       "#": "t_metal_floor_no_roof",
-	  "O": "t_floor_paper"
+	  "O": "t_floor_brood_wasp"
     },
     "furniture": {
       ":": "f_cellphone_booster",
