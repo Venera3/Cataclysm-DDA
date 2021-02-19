@@ -901,7 +901,7 @@
     "bash": {
       "str_min": 15,
       "str_max": 150,
-	  "str_min_supported": 30,
+      "str_min_supported": 30,
       "sound": "rrrrip!",
       "sound_fail": "slap!",
       "sound_vol": 10,
@@ -911,10 +911,10 @@
   },
   {
     "type": "terrain",
-	"id": "t_floor_brood_wasp",
-	"name": "paper brood cap",
-	"description": "A thin paper floor, protecting the pupatig wasp larva until it's ready to emerge.",
-	"looks_like": "t_floor_paper",
+    "id": "t_floor_brood_wasp",
+    "name": "paper brood cap",
+    "description": "A thin paper floor, protecting the pupatig wasp larva until it's ready to emerge.",
+    "looks_like": "t_floor_paper",
     "symbol": ".",
     "color": "white",
     "move_cost": 2,
@@ -928,15 +928,15 @@
       "sound_fail_vol": 4,
       "ter_set": "t_open_air"
     }
-  },  
+  },
   {
     "type": "terrain",
     "id": "t_floor_brood_fake",
     "name": "open air",
     "description": "This is open air.",
-	"//": "Actually, this is a thin membrane of bullshit to keep wasp eggs levitating.",
+    "//": "Actually, this is a thin membrane of bullshit to keep wasp eggs levitating.",
     "symbol": " ",
-	"looks_like": "t_open_air",
+    "looks_like": "t_open_air",
     "color": "i_cyan",
     "move_cost": 2,
     "trap": "tr_ledge",

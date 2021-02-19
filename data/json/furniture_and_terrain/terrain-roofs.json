@@ -368,7 +368,7 @@
     "bash": {
       "str_min": 25,
       "str_max": 150,
-	  "str_min_supported": 40,
+      "str_min_supported": 40,
       "sound": "rrrrip!",
       "sound_fail": "slap!",
       "sound_vol": 15,
