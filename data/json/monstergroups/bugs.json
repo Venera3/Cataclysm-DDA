@@ -62,10 +62,10 @@
   {
     "name": "GROUP_WASP",
     "type": "monstergroup",
-    "default": "mon_wasp_small_guard",
+    "default": "mon_wasp_small",
     "monsters": [
       {
-        "monster": "mon_wasp_small_guard",
+        "monster": "mon_wasp_small",
         "freq": 1000,
         "cost_multiplier": 1,
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
