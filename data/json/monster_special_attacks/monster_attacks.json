@@ -70,7 +70,7 @@
     "attack_type": "melee",
     "id": "sting",
     "cooldown": 20,
-    "move_cost": 300,
+    "move_cost": 260,
     "damage_max_instance": [ { "damage_type": "stab", "amount": 10 } ],
     "body_parts": [
       [ "leg_l", 2 ],
