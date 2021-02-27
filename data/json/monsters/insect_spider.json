@@ -1324,8 +1324,8 @@
     "bodytype": "flying insect",
     "species": [ "INSECT_FLYING" ],
     "diff": 2,
-    "volume": "4 L",
-    "weight": "4 kg",
+    "volume": "9 L",
+    "weight": "9 kg",
     "hp": 20,
     "speed": 130,
     "attack_cost": 130,
@@ -1340,14 +1340,14 @@
     "special_attacks": [
       {
         "id": "sting",
-        "cooldown": 8,
+        "cooldown": 10,
         "min_mul": 0.2,
         "max_mul": 0.4,
         "effects": [ { "id": "venom_weaken", "duration": 100, "chance": 66 } ]
       },
       {
         "type": "bite",
-        "cooldown": 3,
+        "cooldown": 4,
         "move_cost": 130,
         "damage_max_instance": [ { "damage_type": "cut", "amount": 10 } ],
         "min_mul": 0.2,
@@ -1376,6 +1376,7 @@
     "copy-from": "mon_wasp_small",
     "aggression": 8,
     "morale": 100,
+	"melee_skill": 6,
     "extend": { "anger_triggers": [ "HURT", "FIRE" ] },
     "delete": { "fear_triggers": [ "HURT", "FIRE" ] },
     "upgrades": { "half_life": 25, "into": "mon_wasp_guard" }
@@ -1399,7 +1400,7 @@
     "aggression": 7,
     "morale": 20,
     "regen_morale": true,
-    "melee_skill": 6,
+    "melee_skill": 7,
     "melee_dice": 2,
     "melee_dice_sides": 7,
     "special_attacks": [
@@ -1412,7 +1413,7 @@
       },
       {
         "type": "bite",
-        "cooldown": 3,
+        "cooldown": 5,
         "move_cost": 130,
         "damage_max_instance": [ { "damage_type": "cut", "amount": 10, "armor_penetration": 20 } ],
         "body_parts": [
@@ -1449,6 +1450,7 @@
     "copy-from": "mon_wasp",
 	"aggression": 8,
     "morale": 100,
+	"melee_skill": 9,
     "extend": { "anger_triggers": [ "HURT", "FIRE" ] },
     "delete": { "fear_triggers": [ "HURT", "FIRE" ] }
   },
@@ -1456,12 +1458,12 @@
     "id": "mon_wasp_mega",
     "type": "MONSTER",
     "name": { "str": "wasp queen" },
-    "description": "A yellowjacket queen grown to the size of a horse, towering over her daughters.  Her abdomen is swollen with eggs and her wings are frayed, but that won't prevent her from dealing with interlopers should her children have failed to deal with them themselves.",
+    "description": "A yellowjacket queen grown to the size of a horse, towering over her daughters.  Her abdomen is swollen with eggs and her wings are frayed, but that won't prevent her from dealing with interlopers, should her children have failed their task.",
     "copy-from": "mon_wasp_guard",
-    "proportional": { "hp": 5, "volume": 5, "weight": 5 },
+    "proportional": { "hp": 3, "volume": 5, "weight": 5 },
     "speed": 100,
     "attack_cost": 100,
-    "melee_skill": 7,
+	"melee_skill": 6,
     "melee_dice": 4,
     "melee_dice_sides": 6,
     "special_attacks": [
@@ -1472,7 +1474,7 @@
         "damage_max_instance": [ { "damage_type": "stab", "amount": 15, "armor_penetration": 60 } ],
         "min_mul": 1,
         "max_mul": 3,
-        "effects": [ { "id": "venom_weaken", "duration": 600 }, { "id": "downed", "duration": 1, "chance": 50 } ]
+        "effects": [ { "id": "venom_weaken", "duration": 600, "chance": 66 }, { "id": "downed", "duration": 1, "chance": 50 } ]
       },
       {
         "type": "bite",
@@ -1480,7 +1482,15 @@
         "move_cost": 100,
         "damage_max_instance": [ { "damage_type": "cut", "amount": 20, "armor_penetration": 30 } ],
         "min_mul": 1,
-        "max_mul": 3
+        "max_mul": 3,
+        "body_parts": [
+          [ "leg_l", 2 ],
+          [ "leg_r", 2 ],
+          [ "head", 1 ],
+          [ "arm_l", 2 ],
+          [ "arm_r", 2 ],
+          [ "torso", 4 ]
+	     ]
       }
     ],
     "//": "sting 15-45 damage, 6 hits to max intensity, 8 to max duration; bite 10-30",
