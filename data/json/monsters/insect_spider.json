@@ -1332,7 +1332,7 @@
     "material": [ "iflesh" ],
     "symbol": "a",
     "color": "dark_gray",
-    "aggression": 2,
+    "aggression": -5,
     "regen_morale": true,
     "melee_skill": 5,
     "melee_dice": 2,
@@ -1362,11 +1362,11 @@
     "vision_day": 15,
     "vision_night": 5,
     "harvest": "arachnid_wasp",
-    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_CLOSE", "PLAYER_WEAK", "STALK" ],
+    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_CLOSE", "PLAYER_WEAK", "HOSTILE_SEEN" ],
     "fear_triggers": [ "HURT", "FIRE" ],
     "death_function": [ "NORMAL" ],
     "upgrades": { "half_life": 25, "into": "mon_wasp" },
-    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE", "CANPLAY", "PATH_AVOID_FIRE", "HARDTOSHOOT" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "FLIES", "SWARMS", "GROUP_MORALE", "CANPLAY", "PATH_AVOID_FIRE", "HARDTOSHOOT" ]
   },
   {
     "id": "mon_wasp_small_guard",
@@ -1374,10 +1374,10 @@
     "name": { "str": "mutated wasp guard" },
     "description": "A mutated wasp worker, buzzing around their nest.  While her foraging sisters are relatively content to leave you be, this one won't hesitate to attack anything she considers a threat to her home.  Don't linger.",
     "copy-from": "mon_wasp_small",
-    "aggression": 8,
+    "aggression": 0,
     "morale": 100,
 	"melee_skill": 6,
-    "extend": { "anger_triggers": [ "HURT", "FIRE" ] },
+    "extend": { "anger_triggers": [ "HURT", "FIRE", "STALK" ] },
     "delete": { "fear_triggers": [ "HURT", "FIRE" ] },
     "upgrades": { "half_life": 25, "into": "mon_wasp_guard" }
   },
@@ -1397,7 +1397,7 @@
     "material": [ "iflesh" ],
     "symbol": "a",
     "color": "dark_gray",
-    "aggression": 7,
+    "aggression": 2,
     "morale": 20,
     "regen_morale": true,
     "melee_skill": 7,
@@ -1437,10 +1437,10 @@
     "vision_day": 17,
     "vision_night": 7,
     "harvest": "arachnid_wasp",
-    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_CLOSE", "PLAYER_WEAK", "STALK", "SOUND" ],
+    "anger_triggers": [ "FRIEND_ATTACKED", "PLAYER_CLOSE", "PLAYER_WEAK", "HOSTILE_SEEN" ],
     "fear_triggers": [ "HURT", "FIRE" ],
     "death_function": [ "NORMAL" ],
-    "flags": [ "SEES", "SMELLS", "FLIES", "SWARMS", "GROUP_MORALE", "CANPLAY", "HARDTOSHOOT", "PATH_AVOID_FIRE" ]
+    "flags": [ "SEES", "SMELLS", "HEARS", "FLIES", "SWARMS", "GROUP_MORALE", "CANPLAY", "HARDTOSHOOT", "PATH_AVOID_FIRE" ]
   },
   {
     "id": "mon_wasp_guard",
@@ -1448,7 +1448,7 @@
     "name": { "str": "giant wasp guard" },
     "description": "A giant wasp worker, buzzing around their nest.  While her foraging sisters are relatively content to live and let live, this one won't hesitate to attack anything she considers a threat to her home.  Don't linger.",
     "copy-from": "mon_wasp",
-	"aggression": 8,
+	"aggression": 4,
     "morale": 100,
 	"melee_skill": 9,
     "extend": { "anger_triggers": [ "HURT", "FIRE" ] },
@@ -1460,27 +1460,27 @@
     "name": { "str": "wasp queen" },
     "description": "A yellowjacket queen grown to the size of a horse, towering over her daughters.  Her abdomen is swollen with eggs and her wings are frayed, but that won't prevent her from dealing with interlopers, should her children have failed their task.",
     "copy-from": "mon_wasp_guard",
-    "proportional": { "hp": 3, "volume": 5, "weight": 5 },
+    "proportional": { "hp": 4, "volume": 5, "weight": 5 },
     "speed": 100,
     "attack_cost": 100,
-	"melee_skill": 6,
+	"melee_skill": 8,
     "melee_dice": 4,
     "melee_dice_sides": 6,
     "special_attacks": [
       {
         "id": "sting",
-        "cooldown": 8,
+        "cooldown": 5,
 		"move_cost": 200,
         "damage_max_instance": [ { "damage_type": "stab", "amount": 15, "armor_penetration": 60 } ],
         "min_mul": 1,
         "max_mul": 3,
-        "effects": [ { "id": "venom_weaken", "duration": 600, "chance": 66 }, { "id": "downed", "duration": 1, "chance": 50 } ]
+        "effects": [ { "id": "venom_weaken", "duration": 600 }, { "id": "downed", "duration": 1, "chance": 50 } ]
       },
       {
         "type": "bite",
         "cooldown": 3,
         "move_cost": 100,
-        "damage_max_instance": [ { "damage_type": "cut", "amount": 20, "armor_penetration": 30 } ],
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 10, "armor_penetration": 30 } ],
         "min_mul": 1,
         "max_mul": 3,
         "body_parts": [
@@ -1495,7 +1495,7 @@
     ],
     "//": "sting 15-45 damage, 6 hits to max intensity, 8 to max duration; bite 10-30",
     "dodge": 3,
-    "armor_bash": 14,
+    "armor_bash": 10,
     "armor_cut": 28,
     "armor_stab": 20,
     "armor_bullet": 18,
