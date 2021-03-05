@@ -3,7 +3,7 @@
     "type": "palette",
     "id": "wasp_palette",
     "terrain": {
-      "x": "t_paper",
+      "x": "t_paper_brood",
       "X": "t_paper_hard",
       "_": "t_floor_paper_hard",
       "*": "t_roof_paper_hard",
