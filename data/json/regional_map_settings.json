@@ -508,7 +508,7 @@
         "chance": 90,
         "extras": {
           "mx_house_spider": 40,
-          "mx_house_wasp": 60,
+          "mx_house_wasp": 40,
           "mx_military": 5,
           "mx_science": 12,
           "mx_collegekids": 15,
