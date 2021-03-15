@@ -135,7 +135,7 @@ static const mongroup_id GROUP_NETHER_CAPTURED( "GROUP_NETHER_CAPTURED" );
 static const mongroup_id GROUP_NETHER_PORTAL( "GROUP_NETHER_PORTAL" );
 static const mongroup_id GROUP_PETS( "GROUP_PETS" );
 static const mongroup_id GROUP_STRAY_DOGS( "GROUP_STRAY_DOGS" );
-static const mongroup_id GROUP_WASP_GUARD( "GROUP_WASP_GUARD" );
+static const mongroup_id GROUP_WASP_NEST( "GROUP_WASP_NEST" );
 static const mongroup_id GROUP_WASP_QUEEN( "GROUP_WASP_QUEEN" );
 
 static const mtype_id mon_dispatch( "mon_dispatch" );
@@ -294,7 +294,7 @@ static bool mx_house_wasp( map &m, const tripoint &loc )
                 }
             }
         }
-        m.place_spawns( GROUP_WASP_GUARD, 1, pod, pod, 1, true );
+        m.place_spawns( GROUP_WASP_NEST, 1, pod, pod, 1, true );
     }
     m.place_spawns( GROUP_WASP_QUEEN, 1, point_zero, point( SEEX, SEEY ), 1, true );
 
