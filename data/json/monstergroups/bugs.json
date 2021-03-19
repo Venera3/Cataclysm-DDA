@@ -68,28 +68,64 @@
         "monster": "mon_wasp_small",
         "freq": 500,
         "cost_multiplier": 1,
-		    "ends": 2160,
+        "ends": 720,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_small",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       },
       {
         "monster": "mon_wasp_small_guard",
         "freq": 500,
-        "cost_multiplier": 2,
-		    "ends": 2160,
+        "cost_multiplier": 1,
+        "ends": 720,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_small_guard",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       },
       {
         "monster": "mon_wasp",
         "freq": 500,
         "cost_multiplier": 1,
-		    "starts": 720,
+        "starts": 720,
+        "ends": 2160,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       },
       {
         "monster": "mon_wasp_guard",
         "freq": 500,
-        "cost_multiplier": 2,
-		    "starts": 720,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_guard",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       }
     ]
@@ -103,14 +139,32 @@
         "monster": "mon_wasp_small",
         "freq": 1000,
         "cost_multiplier": 1,
-		    "ends": 2160,
+        "ends": 720,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_small",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       },
       {
         "monster": "mon_wasp",
         "freq": 1000,
         "cost_multiplier": 1,
-		    "starts": 720,
+        "starts": 720,
+        "ends": 2160,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp",
+        "freq": 1000,
+        "cost_multiplier": 1,
+        "starts": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       }
     ]
@@ -123,15 +177,33 @@
       {
         "monster": "mon_wasp_small_guard",
         "freq": 1000,
-        "cost_multiplier": 2,
-		    "ends": 1440,
+        "cost_multiplier": 1,
+        "ends": 720,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_small_guard",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       },
       {
         "monster": "mon_wasp_guard",
-        "freq": 1000,
-        "cost_multiplier": 2,
-		    "starts": 720,
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 720,
+        "ends": 2160,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+      },
+      {
+        "monster": "mon_wasp_guard",
+        "freq": 500,
+        "cost_multiplier": 1,
+        "starts": 2160,
+        "pack_size": [ 2, 4 ],
         "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
       }
     ]
@@ -141,18 +213,8 @@
     "type": "monstergroup",
     "default": "mon_null",
     "monsters": [
-      {
-        "monster": "mon_wasp_queen",
-        "freq": 1000,
-        "cost_multiplier": 50,
-		    "ends": 1440
-      },
-      {
-        "monster": "mon_wasp_mega",
-        "freq": 1000,
-        "cost_multiplier": 50,
-		    "starts": 720
-      }
+      { "monster": "mon_wasp_queen", "freq": 1000, "cost_multiplier": 50, "ends": 1440 },
+      { "monster": "mon_wasp_mega", "freq": 1000, "cost_multiplier": 50, "starts": 720 }
     ]
   },
   {
@@ -160,7 +222,7 @@
     "type": "monstergroup",
     "default": "mon_wasp",
     "monsters": [
-      { "monster": "mon_dermatik", "freq": 100, "cost_multiplier": 1 },
+      { "monster": "mon_dermatik", "freq": 50, "cost_multiplier": 1 },
       { "monster": "mon_wasp_guard", "freq": 500, "cost_multiplier": 1 }
     ]
   },
