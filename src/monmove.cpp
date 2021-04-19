@@ -157,6 +157,7 @@ bool monster::will_move_to( const tripoint &p ) const
 
     bool avoid_fire = has_flag( MF_AVOID_FIRE );
     bool avoid_fall = has_flag( MF_AVOID_FALL );
+    bool avoid_field = has_flag( MF_AVOID_FIELD );
     bool avoid_simple = has_flag( MF_AVOID_DANGER_1 );
     bool avoid_complex = has_flag( MF_AVOID_DANGER_2 );
     /*
@@ -167,10 +168,14 @@ bool monster::will_move_to( const tripoint &p ) const
      */
     if( avoid_complex ) {
         avoid_simple = true;
+        avoid_field = true;
     }
     if( avoid_simple ) {
         avoid_fire = true;
         avoid_fall = true;
+    }
+    if( avoid_field ) {
+        avoid_fire = true;
     }
 
     // technically this will shortcut in evaluation from fire or fall
@@ -207,12 +212,13 @@ bool monster::will_move_to( const tripoint &p ) const
 
         const field &target_field = here.field_at( p );
 
-        // Higher awareness is needed for identifying these as threats.
-        if( avoid_complex ) {
-            // Don't enter any dangerous fields
+        if( avoid_field ) {
             if( is_dangerous_fields( target_field ) ) {
                 return false;
             }
+        }
+        // Higher awareness is needed for identifying these as threats.
+        if( avoid_complex ) {
             // Don't step on any traps (if we can see)
             const trap &target_trap = here.tr_at( p );
             if( has_flag( MF_SEES ) && !target_trap.is_benign() && here.has_floor( p ) ) {
@@ -220,7 +226,7 @@ bool monster::will_move_to( const tripoint &p ) const
             }
         }
 
-        // Without avoid_complex, only fire and electricity are checked for field avoidance.
+        // Without avoid_field, only fire and electricity are checked for field avoidance.
         if( avoid_fire && target_field.find_field( fd_fire ) ) {
             return false;
         }

@@ -163,6 +163,7 @@ std::string enum_to_string<m_flag>( m_flag data )
         case MF_AVOID_DANGER_2: return "PATH_AVOID_DANGER_2";
         case MF_AVOID_FALL: return "PATH_AVOID_FALL";
         case MF_AVOID_FIRE: return "PATH_AVOID_FIRE";
+        case MF_AVOID_FIELD: return "PATH_AVOID_FIELD";
         case MF_PRIORITIZE_TARGETS: return "PRIORITIZE_TARGETS";
         case MF_NOT_HALLU: return "NOT_HALLUCINATION";
         case MF_CATFOOD: return "CATFOOD";
