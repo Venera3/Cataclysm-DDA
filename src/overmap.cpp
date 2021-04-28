@@ -56,10 +56,11 @@
 
 static const species_id species_ZOMBIE( "ZOMBIE" );
 
-static const mongroup_id GROUP_CHUD( "GROUP_CHUD" );
 static const mongroup_id GROUP_RIVER( "GROUP_RIVER" );
 static const mongroup_id GROUP_SEWER( "GROUP_SEWER" );
+static const mongroup_id GROUP_SEWER_CITY( "GROUP_SEWER_CITY" );
 static const mongroup_id GROUP_SPIRAL( "GROUP_SPIRAL" );
+static const mongroup_id GROUP_SUBWAY_CITY( "GROUP_SUBWAY_CITY" );
 static const mongroup_id GROUP_SWAMP( "GROUP_SWAMP" );
 static const mongroup_id GROUP_WORM( "GROUP_WORM" );
 static const mongroup_id GROUP_ZOMBIE( "GROUP_ZOMBIE" );
@@ -1109,8 +1110,14 @@ oter_id overmap::get_default_terrain( int z ) const
 {
     if( z == 0 ) {
         return settings.default_oter.id();
-    } else {
-        // // TODO: Get rid of the hard-coded ids.
+    } 
+    if( z == -4 ){
+        static const oter_str_id rock( "rock");
+
+        return rock.id();
+    }
+    else {
+        // // TODO: Get rid of the hard-coded ids.AWDAWD
         static const oter_str_id open_air( "open_air" );
         static const oter_str_id empty_rock( "empty_rock" );
 
@@ -1730,15 +1737,10 @@ bool overmap::generate_sub( const int z )
     for( auto &i : cities ) {
         tripoint_om_omt omt_pos( i.pos, z );
         tripoint_om_sm sm_pos = project_to<coords::sm>( omt_pos );
-        // Sewers and city subways are present at z == -1 and z == -2. Don't spawn CHUD on other z-levels.
-        if( ( z == -1 || z == -2 ) && one_in( 3 ) ) {
-            add_mon_group( mongroup( GROUP_CHUD,
-                                     sm_pos, i.size, i.size * 20 ) );
-        }
-        // Sewers are present at z == -1. Don't spawn sewer monsters on other z-levels.
-        if( z == -1 && !one_in( 8 ) ) {
-            add_mon_group( mongroup( GROUP_SEWER,
-                                     sm_pos, ( i.size * 7 ) / 2, i.size * 70 ) );
+        // Normal subways are present at z == -2, but filtering for the terrain would be much nicer
+        if( z == -2 ) {
+            add_mon_group( mongroup( GROUP_SUBWAY_CITY,
+                                     sm_pos, i.size * 10, i.size * 200 ) );
         }
     }
 
