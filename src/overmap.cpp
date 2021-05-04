@@ -1110,14 +1110,13 @@ oter_id overmap::get_default_terrain( int z ) const
 {
     if( z == 0 ) {
         return settings.default_oter.id();
-    } 
-    if( z == -4 ){
-        static const oter_str_id rock( "rock");
+    }
+    if( z == -4 ) {
+        static const oter_str_id rock( "rock" );
 
         return rock.id();
-    }
-    else {
-        // // TODO: Get rid of the hard-coded ids.AWDAWD
+    } else {
+        // // TODO: Get rid of the hard-coded ids
         static const oter_str_id open_air( "open_air" );
         static const oter_str_id empty_rock( "empty_rock" );
 
@@ -1740,7 +1739,7 @@ bool overmap::generate_sub( const int z )
         // Normal subways are present at z == -2, but filtering for the terrain would be much nicer
         if( z == -2 ) {
             add_mon_group( mongroup( GROUP_SUBWAY_CITY,
-                                     sm_pos, i.size * 10, i.size * 200 ) );
+                                     sm_pos, i.size * 2, i.size * i.size * 2 ) );
         }
     }
 
