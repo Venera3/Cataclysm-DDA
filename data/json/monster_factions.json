@@ -218,6 +218,10 @@
     "base_faction": "mutant"
   },
   {
+        "name": "lab_mutant",
+    "base_faction": "mutant"
+  },
+  {
     "type": "MONSTER_FACTION",
     "name": "bot",
     "neutral": [ "bot", "animal", "insect", "plant", "fish", "robofac", "fungus", "aquatic_predator" ]
