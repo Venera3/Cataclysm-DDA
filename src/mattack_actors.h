@@ -77,6 +77,8 @@ class melee_actor : public mattack_actor
         int range = 1;
         // Attack fails if aimed at adjacent targets
         bool no_adjacent = false;
+        // Hopefully flings you, side*dice*3, hulk =92
+        int throw_strength = 0;
 
         /**
          * If empty, regular melee roll body part selection is used.
