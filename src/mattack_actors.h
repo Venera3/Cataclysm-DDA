@@ -77,7 +77,7 @@ class melee_actor : public mattack_actor
         int range = 1;
         // Attack fails if aimed at adjacent targets
         bool no_adjacent = false;
-        // Hopefully flings you, side*dice*3, hulk =92
+        // If non-zero, the attack will fling targets side*dice*3, hulk =92
         int throw_strength = 0;
 
         /**
@@ -96,6 +96,8 @@ class melee_actor : public mattack_actor
         translation no_dmg_msg_u;
         /** Message for damaging hit against the player. */
         translation hit_dmg_u;
+        /** Message for throwing the player. */
+        translation throw_message_u;
 
         /** Message for missed attack against a non-player. */
         translation miss_msg_npc;
@@ -103,6 +105,8 @@ class melee_actor : public mattack_actor
         translation no_dmg_msg_npc;
         /** Message for damaging hit against a non-player. */
         translation hit_dmg_npc;
+        /** Message for throwing a non-player. */
+        translation throw_message_npc;
 
         melee_actor();
         ~melee_actor() override = default;
