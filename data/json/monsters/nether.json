@@ -815,10 +815,8 @@
     "aggression": 100,
     "morale": 100,
     "melee_cut": 0,
-    "melee_skill": 20,
     "harvest": "exempt",
-    "special_attacks":[ { "id": "smash", "throw_strength": 10, "throw_message_u": "Father, you fly now" } ],
     "death_function": [ "MELT" ],
-    "flags": [ "HEARS", "IMMOBILE", "GOODHEARING", "STUMBLES", "NOHEAD", "HARDTOSHOOT", "FLIES", "PLASTIC", "NO_BREATHE", "NOGIB" ]
+    "flags": [ "HEARS", "GOODHEARING", "STUMBLES", "NOHEAD", "HARDTOSHOOT", "FLIES", "PLASTIC", "NO_BREATHE", "NOGIB" ]
   }
 ]
