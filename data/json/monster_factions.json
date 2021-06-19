@@ -133,8 +133,8 @@
   {
     "type": "MONSTER_FACTION",
     "name": "nether",
-    "neutral": [ "cult", "small_animal", "fish", "slime", "mi-go" ],
-    "by_mood": [ "leech_plant", "vortex" ]
+    "neutral": [ "cult", "small_animal", "fish", "slime" ],
+    "by_mood": [ "leech_plant", "vortex", "mi-go" ]
   },
   {
     "type": "MONSTER_FACTION",
@@ -218,7 +218,8 @@
     "base_faction": "mutant"
   },
   {
-        "name": "lab_mutant",
+    "type": "MONSTER_FACTION",
+    "name": "lab_mutant",
     "base_faction": "mutant"
   },
   {
@@ -409,6 +410,7 @@
     "name": "mi-go",
     "base_faction": "nether",
     "neutral": [ "fish", "small_animal", "nether", "slime" ],
+    "by_mood": [ "nether" ],
     "hate": [ "zombie", "triffid", "fungus", "exodii" ]
   },
   {
