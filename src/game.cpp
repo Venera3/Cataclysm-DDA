@@ -10648,21 +10648,21 @@ void game::on_options_changed()
 #endif
 }
 
-void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bool controlled )
+bool game::fling_creature( Creature *c, const units::angle &dir, float flvel, bool controlled )
 {
     if( c == nullptr ) {
         debugmsg( "game::fling_creature invoked on null target" );
-        return;
+        return false;
     }
 
     if( c->is_dead_state() ) {
         // Flinging a corpse causes problems, don't enable without testing
-        return;
+        return false;
     }
 
     if( c->is_hallucination() ) {
         // Don't fling hallucinations
-        return;
+        return false;
     }
 
     int steps = 0;
@@ -10674,9 +10674,18 @@ void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bo
     player *p = dynamic_cast<player *>( c );
 
     tileray tdir( dir );
-    int range = flvel / 10;
+    // Weight in kilos Normal survivor 81, Flvel hulk 92
+    const int weight = units::to_gram<int>( c->get_weight() ) / 1000;
+    // Can we fling it at all? 92>81 , yes
+    if(flvel < weight) {
+        return false;
+    }
+    // Momentum 7452
+    int momentum = flvel * weight;
+    debugmsg( "Target weighs %d, momentum %d", weight, momentum);
     tripoint pt = c->pos();
-    while( range > 0 ) {
+    while( momentum > 0 ) {
+        debugmsg( "Starting momentum %d", momentum);
         c->underwater = false;
         // TODO: Check whenever it is actually in the viewport
         // or maybe even just redraw the changed tiles
@@ -10723,7 +10732,7 @@ void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bo
 
         // If the critter dies during flinging, moving it around causes debugmsgs
         if( c->is_dead_state() ) {
-            return;
+            return true;
         }
 
         flvel -= force;
@@ -10749,7 +10758,9 @@ void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bo
             // although at lower velocity
             break;
         }
-        range--;
+        // RNG Kg - Kg squared. 81 - 6561
+        momentum -= rng(weight , weight * weight);
+        debugmsg( "Momentum after decrement %d", momentum);
         steps++;
         if( animate && ( seen || u.sees( *c ) ) ) {
             invalidate_main_ui_adaptor();
@@ -10777,14 +10788,17 @@ void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bo
             }
             // Always apply traps to creature i.e. bear traps, tele traps etc.
             m.creature_on_trap( *c, false );
+            return true;
         }
     } else {
         c->underwater = true;
         if( is_u ) {
             if( controlled ) {
                 add_msg( _( "You dive into water." ) );
+                return true;
             } else {
                 add_msg( m_warning, _( "You fall into water." ) );
+                return true;
             }
         }
     }
