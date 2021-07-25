@@ -100,7 +100,7 @@ bool monster::is_immune_field( const field_type_id &fid ) const
         return has_flag( MF_FIREPROOF );
     }
     if( ft.has_elec ) {
-        return has_flag( MF_ELECTRIC );
+        return has_flag( MF_ELECTRIC ) || has_flag( MF_ZAPPROOF );
     }
     if( ft.immune_mtypes.count( type->id ) > 0 ) {
         return true;

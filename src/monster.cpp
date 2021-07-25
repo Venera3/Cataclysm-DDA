@@ -1390,6 +1390,7 @@ bool monster::is_immune_effect( const efftype_id &effect ) const
     if( effect == effect_onfire ) {
         return is_immune_damage( damage_type::HEAT ) ||
                made_of( phase_id::LIQUID ) ||
+               has_flag( MF_FIREPROOF ) ||
                has_flag( MF_FIREY );
     }
 
@@ -1443,12 +1444,13 @@ bool monster::is_immune_damage( const damage_type dt ) const
             return has_flag( MF_ACIDPROOF );
         case damage_type::HEAT:
             // Ugly hardcode - remove later
-            return made_of( material_id( "steel" ) ) || made_of( material_id( "stone" ) );
+            return has_flag( MF_FIREPROOF ) || made_of( material_id( "steel" ) ) || made_of( material_id( "stone" ) );
         case damage_type::COLD:
             return false;
         case damage_type::ELECTRIC:
             return type->sp_defense == &mdefense::zapback ||
                    has_flag( MF_ELECTRIC ) ||
+                   has_flag( MF_ZAPPROOF ) ||
                    has_flag( MF_ELECTRIC_FIELD );
         case damage_type::NONE:
         default:
@@ -1715,7 +1717,7 @@ void monster::deal_damage_handle_type( const effect_source &source, const damage
 {
     switch( du.type ) {
         case damage_type::ELECTRIC:
-            if( has_flag( MF_ELECTRIC ) ) {
+            if( has_flag( MF_ELECTRIC ) || has_flag ( MF_ZAPPROOF ) ) {
                 return; // immunity
             }
             break;

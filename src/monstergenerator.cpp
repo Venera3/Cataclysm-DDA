@@ -201,6 +201,7 @@ std::string enum_to_string<m_flag>( m_flag data )
         case MF_DRIPS_NAPALM: return "DRIPS_NAPALM";
         case MF_DRIPS_GASOLINE: return "DRIPS_GASOLINE";
         case MF_ELECTRIC_FIELD: return "ELECTRIC_FIELD";
+        case MF_ZAPPROOF: return "ZAPPROOF";
         case MF_STUN_IMMUNE: return "STUN_IMMUNE";
         case MF_LOUDMOVES: return "LOUDMOVES";
         case MF_DROPS_AMMO: return "DROPS_AMMO";
