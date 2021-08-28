@@ -38,7 +38,53 @@
         "8": [ "t_floor_paper" ]
       },
       "monster": { "8": { "group": "GROUP_WASP_QUEEN" } },
-      "place_monster": [ { "group": "GROUP_WASP_NEST", "x": [ 0, 23 ], "y": [ 0, 23 ], "repeat": [ 5, 15 ] } ]
+      "place_monster": [
+        {
+          "group": "GROUP_WASP_NEST",
+          "x": [ 0, 23 ],
+          "y": [ 0, 23 ],
+          "repeat": [ 3, 3 ],
+          "spawn_data": {
+            "patrol":
+            [
+              { "x": -5, "y": -5 },
+              { "x": 29, "y": -5 },
+              { "x": 29, "y": 29 },
+              { "x": -5, "y": 29 }
+              ]
+          }
+        },
+        {
+          "group": "GROUP_WASP_NEST",
+          "x": [ 0, 23 ],
+          "y": [ 0, 23 ],
+          "repeat": [ 3, 3 ],
+          "spawn_data": {
+            "patrol":
+            [
+              { "x": -10, "y": 35 },
+              { "x": 35, "y": 35 },
+              { "x": 35, "y": -10 },
+              { "x": -10, "y": -10 }
+              ]
+          }
+        },
+        {
+          "group": "GROUP_WASP_NEST",
+          "x": [ 0, 23 ],
+          "y": [ 0, 23 ],
+          "repeat": [ 3, 3 ],
+          "spawn_data": {
+            "patrol":
+            [
+              { "x": -5, "y": -5 },
+              { "x": 29, "y": -5 },
+              { "x": 29, "y": 29 },
+              { "x": -5, "y": 29 }
+              ]
+          }
+        }
+      ]
     }
   }
 ]
