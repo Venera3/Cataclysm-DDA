@@ -440,6 +440,22 @@
   },
   {
     "type": "item_group",
+    "id": "anesthesia",
+    "subtype": "distribution",
+    "//": "Anesthesia / ICU related items TODO: move anesthetic out of random medical IGs",
+    "entries": [
+      { "item": "anesthetic_kit", "charges": [ 0, 6000 ], "prob": 30 },
+      { "item": "saline", "prob": 30, "container-item": "bag_iv" },
+      { "item": "anesthetic", "prob": 20, "charges": [ 1000, 3000 ] },
+      { "item": "rocuronium", "prob": 10, "count": [ 1, 10 ] },
+      { "item": "medical_tape", "prob": 10 },
+      { "item": "syringe", "prob": 10 },
+      { "item": "disinfectant", "prob": 35, "charges": [ 1, 10 ] },
+      { "item": "vacutainer", "prob": 10, "count": [ 1, 5 ] }
+    ]
+  },
+  {
+    "type": "item_group",
     "id": "dissection",
     "items": [
       { "group": "supplies_reagents_lab", "prob": 20 },

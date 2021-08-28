@@ -264,7 +264,7 @@
         "moves": 400
       }
     ],
-    "flags": [ "TRADER_AVOID" ]
+    "flags": [ "TRADER_AVOID", "NO_RELOAD" ]
   },
   {
     "id": "bottle_glass",
