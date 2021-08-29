@@ -93,6 +93,9 @@ std::pair<std::string, nc_color> wind_text_color( const Character &u );
 
 // Define color for displaying the body temperature
 nc_color bodytemp_color( const Character &u, const bodypart_id &bp );
+// Returns color which this limb would have in healing menus
+nc_color limb_color( const Character &u, const bodypart_id &bp, bool bleed, bool bite,
+                     bool infect );
 // Color for displaying the given encumbrance level
 nc_color encumb_color( const int level );
 
