@@ -23,6 +23,7 @@
 #include "translations.h"
 #include "type_id.h"
 #include "units.h" // IWYU pragma: keep
+#include "weakpoint.h"
 
 class Creature;
 class monster;
@@ -332,6 +333,7 @@ struct mtype {
         int armor_bullet = -1;  /** innate armor vs. bullet */
         int armor_acid = -1;    /** innate armor vs. acid */
         int armor_fire = -1;    /** innate armor vs. fire */
+        ::weakpoints weakpoints;
 
         // Bleed rate in percent, 0 makes the monster immune to bleeding
         int bleed_rate = 100;
