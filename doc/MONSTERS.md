@@ -93,6 +93,7 @@ Monsters may also have any of these optional properties:
 | `fungalize_into`         | (string) mtype_id this monster turns into when fungalized by spores
 | `shearing`               | (array of objects) Items produced when the monster is sheared
 | `speed_description`      | (string) ID of a `speed_description` type describing the monster speed string
+| `petfood`                | (object) Data regarding feeding this monster to turn it into a pet
 
 Properties in the above tables are explained in more detail in the sections below.
 
@@ -450,11 +451,11 @@ The monster's reproduction cycle, if any. Supports:
 (Array, optional)
 Designate seasons during which this monster is capable of reproduction. ie: `[ "SPRING", "SUMMER" ]`
 
-## "shearing
+## "shearing"
 (array of objects, optional)
 
 A set of items that are given to the player when they shear this monster. These entries can be duplicates and are one of these 4 types:
-```json
+```cpp
 "shearing": [
     {
         "result": "wool",
@@ -484,6 +485,18 @@ By default monsters will use the `"DEFAULT"` speed description.
 
 ```JSON
 "speed_description": "SPEED_DESCRIPTION_ID"
+```
+
+## "petfood"
+(object, optional)
+
+Decides whether this monster can be tamed. `%s` is the monster name.
+```cpp
+"petfood": {
+    "food": [ "CATFOOD", "YULECATFOOD" ], // food categories this monster accepts
+    "feed": "The gigantic %s decides not to maul you today.", // (optional) message when feeding the monster the food
+    "pet": "The %s is enjoying hunting the red laser dot." // (optional) message when playing with pet
+}
 ```
 
 ## "special_when_hit"
