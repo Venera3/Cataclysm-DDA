@@ -1035,7 +1035,7 @@
     "copy-from": "mon_zombie",
     "melee_skill": 20,
     "speed": 100,
-    "attack_effs": [ { "id": "paralyzepoison", "duration": 75000 } ]
+    "attack_effs": [ { "id": "wound_infection", "duration": 10, "permanent": true } ]
   },
   {
     "type": "monster_attack",
@@ -1045,6 +1045,65 @@
     "move_cost": 100,
     "damage_max_instance": [ { "damage_type": "stab", "amount": 15, "armor_penetration": 8, "armor_multiplier": 0.5 } ],
     "effects": [ { "id": "bleed", "duration": 100, "affect_hit_bp": true } ]
+  },
+  {
+    "type": "effect_type",
+    "id": "wound_infection",
+    "name": [ "Infected Wound", "Infected Wound2", "Gangrenous Wound", "Gangrenous Wound", "Necrotic Wound" ],
+    "desc": [ "Ugly", "Uglier", "Even uglier", "Can't look", "Can still smell" ],
+    "apply_memorial_log": "Your wound got infected.  Shame somebody nerfed cattails",
+    "remove_memorial_log": "Even though cauterization isn't a thing, you managed to cure a wound infection.  Yay!",
+    "apply_message": "Your wound looks like crap",
+    "remove_message": "Hopefully nobody adds scarring, cause you'll look like crap",
+    "resist_traits": [ "INFRESIST" ],
+    "max_duration": "365 d",
+    "dur_add_perc": 0,
+    "max_intensity": 5,
+    "int_add_val": 1,
+    "int_decay_step": 1,
+    "int_decay_tick": 1,
+    "show_intensity": true,
+    "vitamins": [
+      {
+        "vitamin": "sepsis",
+        "rate": [ [ 100, 100 ], [ 1000, 1000 ] ],
+        "resist_rate": [ [ 0, 0 ], [ 100, 100 ], [ 1000, 1000 ] ],
+        "tick": [ "1 s" ],
+        "resist_tick": [ "5 s" ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "sepsis",
+    "name": [ "Beginning Sepsis", "Sepsis", "Sepsis", "Septic Shock", "Septic Shock" ],
+    "desc": [ "This is bad", "This is worse", "This is horrible", "This is when you may die", "This is when you wish you died" ],
+    "apply_memorial_log": "Got septic",
+    "remove_memorial_log": "Managed to survive sepsis.  You could get a campaign like that",
+    "apply_message": "Uh-oh",
+    "resist_traits": [ "INFRESIST", "ACIDBLOOD" ],
+    "rating": "bad",
+    "max_intensity": 5,
+    "show_intensity": true,
+    "//": "End-stage produces own sepsin, strong AB+INFRES still net negative",
+    "vitamins": [
+      {
+        "vitamin": "sepsis",
+        "rate": [
+          [ 0, 0 ],
+          [ 0, 0 ],
+          [ 0, 0 ],
+          [ 0, 0 ],
+          [ 0, 0 ]
+        ],
+        "resist_rate": [
+          [ 0, 0 ],
+          [ 0, 0 ],
+          [ -2000, -2000 ] ],
+        "tick": [ "1 s" ],
+        "resist_tick": [ "1 s" ]
+      }
+    ]
   },
   {
     "type": "effect_type",

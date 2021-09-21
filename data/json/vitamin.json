@@ -61,6 +61,24 @@
     "disease_excess": [ [ 500, 949 ], [ 950, 1399 ], [ 1400, 1800 ] ]
   },
   {
+    "id": "sepsis",
+    "type": "vitamin",
+    "vit_type": "toxin",
+    "name": { "str": "Sepsis" },
+    "min": 0,
+    "max": 21000,
+    "rate": "432 s",
+    "//": "105 days unaided recovery from max?",
+    "excess": "sepsis",
+    "disease_excess": [
+      [ 3600, 7199 ],
+      [ 7200, 10799 ],
+      [ 10800, 14399 ],
+      [ 14400, 18000 ],
+      [ 18000, 21000 ]
+    ]
+  },
+  {
     "id": "bad_food",
     "type": "vitamin",
     "vit_type": "counter",
