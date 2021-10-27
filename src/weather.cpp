@@ -121,10 +121,14 @@ void glare( const weather_type_id &w )
     }
     //apply final glare effect
     if( dur > 0_turns && effect != nullptr ) {
-        //enhance/reduce by some traits
-        if( player_character.has_trait( trait_CEPH_VISION ) ) {
-            dur = dur * 2;
+
+        for( const bodypart_id &bp : player_character.get_all_body_parts_of_type(
+                 body_part_type::type::sensor ) ) {
+            if( bp->has_flag( "HIGH_GLARE" ) ) {
+                dur *= 2;
+            }
         }
+
         player_character.add_env_effect( *effect, body_part_eyes, 2, dur );
     }
 }
