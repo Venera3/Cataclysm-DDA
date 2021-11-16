@@ -2253,9 +2253,6 @@ void Character::recalc_sight_limits()
     if( has_active_mutation( trait_ELFA_FNV ) ) {
         vision_mode_cache.set( FULL_ELFA_VISION );
     }
-    if( has_active_mutation( trait_CEPH_VISION ) ) {
-        vision_mode_cache.set( CEPH_VISION );
-    }
     if( has_active_mutation( trait_ELFA_NV ) ) {
         vision_mode_cache.set( ELFA_VISION );
     }
@@ -2312,7 +2309,7 @@ float Character::get_vision_threshold( float light_level ) const
 
     float range = get_per() / 3.0f;
     if( vision_mode_cache[NV_GOGGLES] || vision_mode_cache[NIGHTVISION_3] ||
-        vision_mode_cache[FULL_ELFA_VISION] || vision_mode_cache[CEPH_VISION] ) {
+        vision_mode_cache[FULL_ELFA_VISION] ) {
         range += 10;
     } else if( vision_mode_cache[NIGHTVISION_2] || vision_mode_cache[FELINE_VISION] ||
                vision_mode_cache[URSINE_VISION] || vision_mode_cache[ELFA_VISION] ) {
