@@ -26,9 +26,8 @@
     "heading_multiple": "Blg Eyes",
     "copy-from": "eyes",
     "opposite_part": "eyes_bulging",
-    "hit_size": 1.2,
-    "hit_size_relative": [ 0, 0.5, 0.8 ],
-    "hit_difficulty": 1.2
+    "hit_size": 0.9,
+    "hit_difficulty": 1.25
   },
   {
     "type": "mutation",
@@ -55,7 +54,7 @@
     "heading_multiple": "Ceph Eyes",
     "copy-from": "eyes_bulging",
     "opposite_part": "eyes_ceph",
-    "flags": [ "IGNORE_TEMP", "EYE_MEMBRANE" ]
+    "flags": [ "IGNORE_TEMP", "LIMB_UPPER", "EYE_MEMBRANE" ]
   },
   {
     "type": "mutation",
@@ -79,8 +78,8 @@
     "//": "Great night vision, TODO: Read in darkness?",
     "copy-from": "eyes_ceph",
     "opposite_part": "eyes_ceph_good",
-    "nightvision_score": 4.5,
-    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "EYE_MEMBRANE" ]
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 4.5 ], [ "reaction", 0.7 ] ],
+    "flags": [ "IGNORE_TEMP", "LIMB_UPPER", "HIGH_GLARE", "EYE_MEMBRANE" ]
   },
   {
     "type": "mutation",
@@ -112,9 +111,9 @@
     "main_part": "eyes_compound",
     "connected_to": "eyes_compound",
     "opposite_part": "eyes_compound",
-    "vision_score": 0.65,
-    "nightvision_score": 1,
-    "flags": [ "IGNORE_TEMP", "SEESLEEP" ]
+    "hit_size": 7,
+    "limb_scores": [ [ "vision", 0.65 ], [ "night_vis", 1.0 ], [ "reaction", 0.8 ] ],
+    "flags": [ "IGNORE_TEMP", "SEESLEEP", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -146,8 +145,7 @@
     "main_part": "eyes_compound_good",
     "connected_to": "eyes_compound_good",
     "opposite_part": "eyes_compound_good",
-    "vision_score": 0.9,
-    "reaction_score": 1.8
+    "limb_scores": [ [ "vision", 0.9 ], [ "night_vis", 1.0 ], [ "reaction", 1.8 ] ]
   },
   {
     "type": "mutation",
@@ -186,8 +184,7 @@
     "heading_multiple": "Elfa Eyes",
     "encumbrance_text": "Your vision is impaired!",
     "opposite_part": "eyes_elfa",
-    "vision_score": 1.1,
-    "nightvision_score": 2.5
+    "limb_scores": [ [ "vision", 1.1 ], [ "night_vis", 2.5 ], [ "reaction", 0.7 ] ]
   },
   {
     "type": "mutation",
@@ -209,8 +206,7 @@
     "//": "Getting very good at playing Legolas",
     "copy-from": "eyes_elfa",
     "opposite_part": "eyes_elfa_good",
-    "vision_score": 1.4,
-    "nightvision_score": 4.5
+    "limb_scores": [ [ "vision", 1.4 ], [ "night_vis", 4.5 ], [ "reaction", 0.7 ] ]
   },
   {
     "type": "mutation",
@@ -236,11 +232,9 @@
     "heading_multiple": "Fel.  Eyes",
     "copy-from": "eyes",
     "opposite_part": "eyes_feline",
-    "hit_size": 1.2,
-    "hit_size_relative": [ 0, 0.4, 0.7 ],
-    "hit_difficulty": 1.2,
-    "vision_score": 0.8,
-    "flags": [ "IGNORE_TEMP", "HIGH_GLARE" ]
+    "hit_size": 0.7,
+    "limb_scores": [ [ "vision", 0.8 ], [ "night_vis", 1.0 ], [ "reaction", 0.7 ] ],
+    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -261,10 +255,8 @@
     "//": "Good nightvision and reactions, worse resolution",
     "copy-from": "eyes_feline",
     "opposite_part": "eyes_feline_good",
-    "vision_score": 0.8,
-    "nightvision_score": 3,
-    "reaction_score": 1.25,
-    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "HYPEROPIC" ]
+    "limb_scores": [ [ "vision", 0.8 ], [ "night_vis", 3.0 ], [ "reaction", 1.25 ] ],
+    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "HYPEROPIC", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -282,8 +274,8 @@
     "//": "Good nightvision, shortsighted in the light",
     "copy-from": "eyes",
     "opposite_part": "eyes_ursine",
-    "nightvision_score": 3,
-    "flags": [ "IGNORE_TEMP", "MYOPIC_IN_LIGHT" ]
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 3.0 ], [ "reaction", 0.7 ] ],
+    "flags": [ "IGNORE_TEMP", "MYOPIC_IN_LIGHT", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -304,14 +296,12 @@
     "id": "eyes_bird",
     "copy-from": "eyes",
     "opposite_part": "eyes_bird",
-    "vision_score": 2.5,
-    "nightvision_score": 1.5
+    "limb_scores": [ [ "vision", 2.5 ], [ "night_vis", 1.5 ], [ "reaction", 0.7 ] ]
   },
   {
     "type": "mutation",
     "id": "SEESLEEP",
     "name": { "str": "Lidless Eyes" },
-    "//": "8 Env resist on eye",
     "points": 2,
     "visibility": 3,
     "ugliness": 4,
@@ -331,7 +321,7 @@
     "heading_multiple": "Fish Eyes",
     "opposite_part": "eyes_fish",
     "env_protection": 8,
-    "flags": [ "EYE_MEMBRANE", "IGNORE_TEMP", "SEESLEEP" ]
+    "flags": [ "EYE_MEMBRANE", "IGNORE_TEMP", "SEESLEEP", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -359,9 +349,8 @@
     "heading_multiple": "Eyestalks",
     "opposite_part": "eyes_snail",
     "hit_size": 1.5,
-    "hit_size_relative": [ 0.5, 1.2, 1.5 ],
     "hit_difficulty": 1.5,
-    "reaction_score": 1.1
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 1.0 ], [ "reaction", 0.8 ] ]
   },
   {
     "type": "mutation",
@@ -385,7 +374,7 @@
     "id": "eyes_snail_good",
     "copy-from": "eyes_snail",
     "opposite_part": "eyes_snail_good",
-    "reaction_score": 1.25
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 1.0 ], [ "reaction", 1.0 ] ]
   },
   {
     "type": "mutation",
@@ -432,7 +421,7 @@
     "id": "eyes_lizard_good",
     "copy-from": "eyes_lizard",
     "opposite_part": "eyes_lizard_good",
-    "flags": [ "IGNORE_TEMP", "INFRARED" ]
+    "flags": [ "IGNORE_TEMP", "INFRARED", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -459,9 +448,8 @@
     "accusative": { "ctxt": "bodypart_accusative", "str": "frog eyes" },
     "heading": "Frg Eyes",
     "heading_multiple": "Frg Eyes",
-    "nightvision_score": 1.1,
-    "reaction_score": 1.2,
-    "flags": [ "IGNORE_TEMP", "EYE_MEMBRANE", "SEESLEEP", "MYOPIC_IN_LIGHT" ]
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 1.1 ], [ "reaction", 1.0 ] ],
+    "flags": [ "IGNORE_TEMP", "EYE_MEMBRANE", "SEESLEEP", "MYOPIC_IN_LIGHT", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
@@ -484,8 +472,8 @@
     "accusative": { "ctxt": "bodypart_accusative", "str": "troglobite eyes" },
     "heading": "Trog Eyes",
     "heading_multiple": "Trog Eyes",
-    "nightvision_score": 4.5,
-    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "INFRARED" ]
+    "limb_scores": [ [ "vision", 1.0 ], [ "night_vis", 4.5 ], [ "reaction", 0.7 ] ],
+    "flags": [ "IGNORE_TEMP", "HIGH_GLARE", "INFRARED", "LIMB_UPPER" ]
   },
   {
     "type": "mutation",
