@@ -54,7 +54,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "CEPH_EYES" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_ceph_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
@@ -105,7 +105,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "COMPOUND_EYES" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_compound_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
@@ -162,7 +162,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "ELFA_NV" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_elfa_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
@@ -211,7 +211,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "FEL_EYE" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_feline_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
@@ -259,7 +259,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "EYESTALKS1" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_snail_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
@@ -307,7 +307,7 @@
     "deactivate_condition": { "not": { "u_has_trait": "LIZ_IR" } },
     "effect": [
       {
-        "set_queue_effect_on_condition": [
+        "queue_eocs": [
           {
             "id": "eyes_lizard_counter",
             "//": "Progresses a counter regardless of threshold/value etc",
