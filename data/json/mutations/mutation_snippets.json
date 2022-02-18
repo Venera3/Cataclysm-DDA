@@ -1,82 +1,182 @@
 [
-    {
-      "type": "snippet",
-      "category": "<arm_itch>",
-      "text": [
-        "Your arms start itching.",
-        "Something is crawling under your skin.",
-        "You pause for a moment.  The movement under your skin doesn't."
-      ]
-    },
-    {
-      "type": "snippet",
-      "category": "<arm_pain>",
-      "text": [ "Your arms hurt!", "Your arms cramp!" ]
-    },
-    {
-      "type": "snippet",
-      "category": "<arm_drop>",
-      "text": [
-        "Your hands seize up for a moment, and you drop your weapon!",
-        "Your arms fall down paralyzed, and your weapon tumbles to the ground!"
-      ]
-    },
-    {
-        "type": "snippet",
-        "category": "<mutagen>",
-        "text": [
-            "Your body is so…unfit for all this.  If only you could become better.",
-            "You hate this skin, this fragile flesh.  Become more.",
-            "Is this just how you are, now?  Couldn't you be more?"
-        ]
-    },
-    {
-      "type": "snippet",
-      "category": "<mutagen_bird>",
-      "text": [
-        "You long for the skies, to watch the tiny problems of the ground disappear below you.",
-        "You remember feeling less attached to the ground.  What are you missing?",
-        "You need more if you are to fly South before the cold comes.  Much more.",
-        "Is your beak strong enough?  Your feathers long?  No, you need more."
-      ]
-    },
-    {
-      "type": "snippet",
-      "category": "<mutagen_raptor>",
-      "text": [
-        "Slow.  Too slow.  Slower than prey.",
-        "You'll never wet your talons at this rate.  You need to become better.",
-        "Scenes of a chase, claws, blood on the leaves flash before your eyes.  You need more to truly understand it.",
-        "Not a care in the world, only the hunt.  How you wish you were that far gone already."
-      ]
-    },
-    {
-      "type": "snippet",
-      "category": "<mutagen_bird_raptor>",
-      "text": [ "<mutagen_bird>", "<mutagen_raptor>" ]
-    },
-    {
-      "type": "snippet",
-      "category": "<arms_feather_dream>",
-      "text": [
-        "You are desperate to stop your hands from pulling out handfuls of your beautiful feathers, but they move on their own accord.  You manage to hold one of the useless things between your talons, and bring your beak down on it…Just a dream.  Still, food for thought.",
-        "Clouds surround you as you soar through the sky.  You look down and see the wilderness stretching out as far as the eye can see, but you can't stay here.  You need to go somewhere else, to the land of warmth and plenty.  Your eyes wander over your beautiful wings propelling you along, and you're mesmerized by their rhytmic beating.  Much better than your…hands.  You have hands, not wings.  Not yet.",
-        "You are but a child again, fighting over the dinner's remains with your brothers and sisters.  There were times for mirth and playfulness, but this is not one of those - the time nears when the smallest will be cast aside, and you're all terrified of being chosen."
-      ]
-    },
-    {
-      "type": "snippet",
-      "category": "<wings_bird_success>",
-      "text": [
-        "You dream of jumping from a cliff for your first flight, but the feathers on your clumsy arms can't hold you.  You hit the ground, and your hands are mangled beyond recognition.  After waking, the pain persists, and you're startled to see your useless fingers snap and disappear in your rich plumage.  Good riddance, you think, before falling unconscious."
-      ]
-    },
-    {
-      "type": "snippet",
-      "category": "<slime_dream>",
-      "text": [
-        "It took you so long to get here - all those funny looks, all the neighbors complaining about the smell…you lift the last canister with a grunt and empty its contents into the churning bathtub.  You strip down and dive into the liquid.  For a brief moment you're wracked by unimaginable pain until the acid mercifully burns your nerves away, letting you lose yourself in the ecstasy of dissolution.\n\nYou wake drenched in sweat.  Surely, it could not be that simple…could it?"
-      ]
-    }
-  ]
-  
+  {
+    "type": "snippet",
+    "category": "<arm_itch>",
+    "text": [
+      "Your arms start itching.",
+      "Something is crawling under your skin.",
+      "You pause for a moment.  The movement under your skin doesn't."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arm_pain>",
+    "text": [ "Your arms hurt!", "Your arms cramp!" ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arm_drop>",
+    "text": [
+      "Your hands seize up for a moment, and you drop your weapon!",
+      "Your arms fall down paralyzed, and your weapon tumbles to the ground!"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen>",
+    "text": [
+      "Your body is so…unfit for all this.  If only you could become better.",
+      "You hate this skin, this fragile flesh.  Become more.",
+      "Is this just how you are, now?  Couldn't you be more?"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen_bird>",
+    "text": [
+      "You long for the skies, to watch the tiny problems of the ground disappear below you.",
+      "You remember feeling less attached to the ground.  What are you missing?",
+      "You need more if you are to fly South before the cold comes.  Much more.",
+      "Is your beak strong enough?  Your feathers long?  No, you need more."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen_insect>",
+    "text": [
+      "You long for a safe, dark place to complete your change.",
+      "You could build a hive, if only you were better.  What are you missing?",
+      "More of the <color_yellow> good nectar</color>.  That's what you need.",
+      "You can't be expected to metamorphose with so little.  You need more."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen_spider>",
+    "text": [
+      "You feel exposed without your webs.",
+      "Your venoms is weak, your mandibles blunt.  Drink deeper.",
+      "Wait.  Keep still.  Prey will surely come.",
+      "Not enough legs.  How will you hold your webs like this?"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen_raptor>",
+    "text": [
+      "Slow.  Too slow.  Slower than prey.",
+      "You'll never wet your talons at this rate.  You need to become better.",
+      "Scenes of a chase, claws, blood on the leaves flash before your eyes.  You need more to truly understand it.",
+      "Not a care in the world, only the hunt.  How you wish you were that far gone already."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<mutagen_bird_raptor>",
+    "text": [ "<mutagen_bird>", "<mutagen_raptor>" ]
+  },
+  {
+    "type": "snippet",
+    "category": "<bid_dream>",
+    "text": [
+      "You are but a child again, fighting over the dinner's remains with your brothers and sisters.  There were times for mirth and playfulness, but this is not one of those - the time nears when the smallest will be cast aside, and you're all terrified of being chosen."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_feather_dream>",
+    "text": [
+      "<bird_dream>",
+      "You are desperate to stop your hands from pulling out handfuls of your beautiful feathers, but they move on their own accord.  You manage to hold one of the useless things between your talons, and bring your beak down on it…Just a dream.  Still, food for thought.",
+      "Clouds surround you as you soar through the sky.  You look down and see the wilderness stretching out as far as the eye can see, but you can't stay here.  You need to go somewhere else, to the land of warmth and plenty.  Your eyes wander over your beautiful wings propelling you along, and you're mesmerized by their rhytmic beating.  Much better than your…hands.  You have hands, not wings.  Not yet."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<wings_bird_success>",
+    "text": [
+      "You dream of jumping from a cliff for your first flight, but the feathers on your clumsy arms can't hold you.  You hit the ground, and your hands are mangled beyond recognition.  After waking, the pain persists, and you're startled to see your useless fingers snap and disappear in your rich plumage.  Good riddance, you think, before falling unconscious."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_bat_dream>",
+    "text": [
+      "You're starving.  The last few hunts were fallow, and your nestmates are just as hungry as you are.  No place for altruism tonight, but you're not quite ready to sink your fangs into your neighbor.  Not yet."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<wings_bat_success>",
+    "text": [
+      "Tonight you will finally fly, you're sure of it.  The outside world grows calm, the ever-present noise that reaches down to the caves fading slowly.  You release your grip on the ceiling and fall, nailing an ambitious flip on your way down.  You extend your wings, catching air between your fingers before the skin of your wings wrinkles slides off, revealing disgusting, ill-proportioned hands.  You prepare to hit the stones, but you just keep falling into the dark nothing below."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<insect_dream>",
+    "text": [
+      "You and your sisters have worked diligently, made your home safe and prosperous.  You felt so proud.  But lately Mother has been growing slower, and more cells are empty than with brood.  You see hesitation on your sisters as well…does the hive need you to step up?  Would they follow?  Could you defeat Her?",
+      "You dream of a dark, damp place permeated by the smell of sawdust.  You feel like this is all you've ever known, each bend in the walls and scratch on the floor your handiwork.  It feels like home, but deep down you know that you'll have to change and emerge into the dangerous, light-battered outside.",
+      "You have stuffed yourself to bursting for the fourth time today, but your hunger doesn't abate.  You would need to escape your too-small skin to be able to eat enough, you're sure of it.  Take the knife to one of the stretch marks on your back, and part the skin - it springs to the side readily and with no pain.  You work your way down your sides, changing the knife between hands as needed and free your <color_light_green>new skin</color> from its fleshy prison.",
+      "Getting the bodybag was harder than you would have thought, and ordinary garbage bags would just not do.  You eat your fill for the last time with this mouth, undress (you won't need clothes after the <bold>change</bold>), and climb in the bag.  Closing the zipper from the inside is a challenge, but you need complete darkness for what comes now.  You wait.\nAnd wait.\nAnd wait.\n\nCould you have been wrong?  You were so sure the time was right.\nYou need to get out of here, but you can't move your…anything.  Do you even have anything to move?"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_insect_dream>",
+    "text": [
+      "<insect_dream>",
+      "You are cleaning yourself after a successful hunt, brushing away the hemolymph and viscera to reveal your carapace's original shine.  There are some pink, greasy pieces stuck on your midsection that just don't want to come off, so you angle your head to pull them free.  A powerful tug causes sharp pain, and you're startled as the pieces of flesh start moving of their own accord, flailing with five antennae on their end.  You make short work of what must be worms, and inspect the two bleeding craters they left on your torso…nothing your next molt won't fix, but unsightly all the same."
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_insect_success>",
+    "text": [
+      "Just an ordinary day of building, cleaning, hauling, and hunting, but something is amiss the whole time.  Every task takes slightly longer, and your gait is somehow hobbling.  Thankfully, your comrades don't seem to have noticed anything yet - you carried out the sentence of defective workers often enough to know what's in store for you.  You feel compelled to make your way to the nursery, and try your best to blend in with the caretakers.  Suddenly, your limbs seize up and something stirs in your abdomen.  Sharp pain spreads into your sides, and a pair of black worms emerge from your midsection, followed by a dozen more.  You watch in horror as they make their way towards the little ones before falling unconscious.\n\nYou wake up disoriented, before feeling something stir in your sides…"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<spider_dream>",
+    "text": [
+      "You dream of wonderful evening - they're still the most beautiful companion you could imagine, and the food is phenomenal.  You treat them to some delightful morsels to crown",
+      "You slept through the cold, fallow months in your safe retreat and emerge"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_spider_dream>",
+    "text": [
+      "You have practiced this dance your whole life, and you finally get your chance: will you  be able to impress them and postpone your demise, or will you contribute nothing more to the great web of your species than calories?  You stretch your arms and begin, but the second pair can't seem to keep sync with the first, and some of the joints seem stiff.  You brush them against your abdomen in an opportunate moment and are shocked to see your beautiful carapace flake away and reveal quivering flesh beneath.  Your partner is less than impressed, but obviously hungry…"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_spider_upper_success>",
+    "text": [  ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_spider_lower_success>",
+    "text": [  ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_tentacle_dream>",
+    "text": [  ]
+  },
+  {
+    "type": "snippet",
+    "category": "<arms_tentacle_success>",
+    "text": [  ]
+  },
+  {
+    "type": "snippet",
+    "category": "<slime_dream>",
+    "text": [
+      "It took you so long to get here - all those funny looks, all the neighbors complaining about the smell…you lift the last canister with a grunt and empty its contents into the churning bathtub.  You strip down and dive into the liquid.  For a brief moment you're wracked by unimaginable pain until the acid mercifully burns your nerves away, letting you lose yourself in the ecstasy of dissolution.\n\nYou wake drenched in sweat.  Surely, it could not be that simple…could it?"
+    ]
+  }
+]

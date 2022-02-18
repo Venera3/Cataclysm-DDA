@@ -2939,7 +2939,8 @@
     "description": "Your body produces a potent venom.  Cutting or stabbing attacks from mutations have a chance to poison your target.",
     "prereqs": [ "POISRESIST" ],
     "changes_to": [ "POISONOUS2" ],
-    "category": [ "SLIME", "TROGLOBITE", "SPIDER", "CEPHALOPOD", "GASTROPOD", "CHIMERA", "BATRACHIAN" ]
+    "category": [ "SLIME", "TROGLOBITE", "SPIDER", "CEPHALOPOD", "GASTROPOD" ],
+    "flags": [ "POISONOUS1" ]
   },
   {
     "type": "mutation",
@@ -2949,7 +2950,8 @@
     "description": "Your venom has become particularly strong.  You're confident that your bites or other cutting/stabbing natural attacks will take your target down quickly.",
     "prereqs": [ "POISONOUS" ],
     "threshreq": [ "THRESH_SPIDER" ],
-    "category": [ "SPIDER" ]
+    "category": [ "SPIDER" ],
+    "flags": [ "POISONOUS2" ]
   },
   {
     "type": "mutation",
@@ -5754,6 +5756,8 @@
     "valid": false,
     "description": "Gain a tail bodypart.",
     "enchantments": [ "ENCH_DEBUG_TAIL" ],
+    "flags": [ "DREAMY" ],
+    "armor": [ { "part_types": [ "wing" ], "bash": 999, "bullet": 999 } ],
     "debug": true
   },
   {
@@ -6012,30 +6016,6 @@
   },
   {
     "type": "mutation",
-    "id": "RABBIT_EARS",
-    "name": { "str": "Rabbit Ears" },
-    "points": 1,
-    "visibility": 9,
-    "ugliness": -1,
-    "description": "Your ears have grown into tall, flexible and pretty rabbit ears.  They're are slender and enhance your hearing beyond the normal range.",
-    "types": [ "EARS" ],
-    "category": [ "RABBIT" ],
-    "hearing_modifier": 1.8
-  },
-  {
-    "type": "mutation",
-    "id": "TAIL_RABBIT",
-    "name": { "str": "Rabbit Tail" },
-    "points": 0,
-    "visibility": 1,
-    "ugliness": -1,
-    "description": "Your stubby tail has become fuzzy and more round.  It looks adorable, but doesn't seem to serve another purpose beyond that.",
-    "types": [ "TAIL" ],
-    "cancels": [ "TAIL_STUB" ],
-    "category": [ "RABBIT" ]
-  },
-  {
-    "type": "mutation",
     "id": "RABBIT_FUR",
     "name": { "str": "Rabbit Fur" },
     "points": 2,
@@ -6048,56 +6028,6 @@
     "prereqs": [ "LIGHTFUR" ],
     "category": [ "RABBIT" ],
     "armor": [ { "part_types": [ "torso", "head", "arm", "hand", "leg", "foot", "mouth", "tail" ], "bash": 1 } ]
-  },
-  {
-    "type": "mutation",
-    "id": "RABBIT_FEET",
-    "name": { "str": "Rabbit Feet" },
-    "points": -1,
-    "visibility": 2,
-    "ugliness": 2,
-    "mixed_effect": true,
-    "description": "Your feet have grown into strong and large rabbit feet.  This makes your kicks pack a little more oomph.  Emphasis on little.  It also offers some warmth, and the lucky part is but superstition.  The downside is you are unable to wear shoes.",
-    "types": [ "FEET" ],
-    "category": [ "RABBIT" ],
-    "wet_protection": [ { "part": "foot_l", "neutral": 10 }, { "part": "foot_r", "neutral": 10 } ],
-    "restricts_gear": [ "foot_l", "foot_r" ],
-    "destroys_gear": true,
-    "bodytemp_modifiers": [ 25, 50 ],
-    "armor": [ { "parts": [ "foot_l", "foot_r" ], "bash": 1 } ],
-    "attacks": {
-      "attack_text_u": "You kick %s with your large feet",
-      "attack_text_npc": "%1$s kicks %2$s with their large feet",
-      "chance": 15,
-      "strength_damage": { "damage_type": "bash", "amount": 1.5 }
-    }
-  },
-  {
-    "type": "mutation",
-    "id": "RABBIT_NOSE",
-    "name": { "str": "Rabbit Nose" },
-    "points": -1,
-    "visibility": 6,
-    "ugliness": 1,
-    "description": "Your nose has morphed into a cute bunny nose, along with the snout.  It's extremely twitchy too.",
-    "types": [ "MUZZLE" ],
-    "prereqs": [ "SNOUT" ],
-    "category": [ "RABBIT" ]
-  },
-  {
-    "type": "mutation",
-    "id": "PAWS_LITTLE",
-    "name": { "str": "Little Paws" },
-    "points": -1,
-    "visibility": 2,
-    "ugliness": 1,
-    "description": "Your hands have elongated and look a bit more like paws.  It makes fine manipulation a little more difficult, but you can still probably manage.",
-    "encumbrance_always": [ [ "hand_l", 5 ], [ "hand_r", 5 ] ],
-    "craft_skill_bonus": [ [ "electronics", -1 ], [ "tailor", -1 ], [ "mechanics", -1 ] ],
-    "types": [ "HANDS" ],
-    "prereqs": [ "NAILS" ],
-    "cancels": [ "TALONS" ],
-    "category": [ "RABBIT" ]
   },
   {
     "type": "mutation",

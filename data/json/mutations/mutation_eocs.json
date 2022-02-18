@@ -98,7 +98,7 @@
             },
             "false_effect": [
               { "u_message": "<mutagen_bird_raptor>", "snippet": true },
-              { "set_weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 2 ], [ "eoc_arm_itch", 5 ] ] }
+              { "weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 2 ], [ "eoc_arm_itch", 5 ] ] }
             ],
             "effect": [
               {
@@ -152,7 +152,7 @@
                 ]
               },
               {
-                "set_weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 5 ], [ "eoc_arm_drop", 1 ], [ "eoc_arm_itch", 5 ] ]
+                "weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 5 ], [ "eoc_arm_drop", 1 ], [ "eoc_arm_itch", 5 ] ]
               }
             ],
             "effect": [
@@ -182,7 +182,7 @@
                       { "u_lose_effect": "sleep" },
                       { "u_lose_var": "wings_bird", "type": "progress", "context": "mutation" },
                       { "u_lose_trait": "ARM_FEATHERS" },
-                      { "u_add_trait": "WINGS_BIRD" },
+                      { "u_add_trait": "ARM_WINGS_BIRD" },
                       { "arithmetic": [ { "u_val": "vitamin", "name": "mutagen_bird" }, "-=", { "const": 500 } ] }
                     ]
                   }
@@ -267,7 +267,7 @@
                 ]
               },
               {
-                "set_weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 5 ], [ "eoc_arm_drop", 1 ], [ "eoc_arm_itch", 5 ] ]
+                "weighted_list_eocs": [ [ "eoc_null", 1 ], [ "eoc_arm_pain", 5 ], [ "eoc_arm_drop", 1 ], [ "eoc_arm_itch", 5 ] ]
               }
             ],
             "effect": [
@@ -394,7 +394,7 @@
                   }
                 ]
               },
-              { "set_weighted_list_eocs": [ [ "eoc_null", 1 ] ] }
+              { "weighted_list_eocs": [ [ "eoc_null", 1 ] ] }
             ],
             "effect": [
               {
@@ -522,7 +522,7 @@
                   }
                 ]
               },
-              { "set_weighted_list_eocs": [ [ "eoc_null", 1 ] ] }
+              { "weighted_list_eocs": [ [ "eoc_null", 1 ] ] }
             ],
             "effect": [
               {
@@ -598,7 +598,7 @@
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 10 } ] },
               { "arithmetic": [ { "u_val": "pain" }, "+=", { "const": 10 } ] },
               {
-                "set_weighted_list_eocs": [ [ "eoc_null", 13 ], [ "eoc_vision_glare", 10 ], [ "eoc_vision_blind", 1 ], [ "eoc_vision_stun", 2 ] ]
+                "weighted_list_eocs": [ [ "eoc_null", 13 ], [ "eoc_vision_glare", 10 ], [ "eoc_vision_blind", 1 ], [ "eoc_vision_stun", 2 ] ]
               }
             ],
             "effect": [
@@ -654,9 +654,7 @@
               { "u_message": "<eyes_compound>", "snippet": true, "type": "bad" },
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 10 } ] },
               { "arithmetic": [ { "u_val": "pain" }, "+=", { "const": 10 } ] },
-              {
-                "set_weighted_list_eocs": [ [ "eoc_null", 11 ], [ "eoc_vision_blind", 1 ], [ "eoc_vision_stun", 10 ] ]
-              }
+              { "weighted_list_eocs": [ [ "eoc_null", 11 ], [ "eoc_vision_blind", 1 ], [ "eoc_vision_stun", 10 ] ] }
             ],
             "effect": [
               { "u_message": "The disjointed mosaic of your sight suddenly becomes clear…er!", "type": "mixed" },
@@ -704,9 +702,7 @@
               { "u_message": "<eyes_elfa>", "snippet": true, "type": "bad" },
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 10 } ] },
               { "arithmetic": [ { "u_val": "pain" }, "+=", { "const": 10 } ] },
-              {
-                "set_weighted_list_eocs": [ [ "eoc_null", 11 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_hallu", 5 ] ]
-              }
+              { "weighted_list_eocs": [ [ "eoc_null", 11 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_hallu", 5 ] ] }
             ],
             "effect": [
               { "u_message": "Your vision grows blurry, then the world snaps back into focus with dizzying speed.", "type": "mixed" },
@@ -752,9 +748,7 @@
             "false_effect": [
               { "u_message": "<eyes_feline>", "snippet": true, "type": "bad" },
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 10 } ] },
-              {
-                "set_weighted_list_eocs": [ [ "eoc_null", 10 ], [ "eoc_vision_glare", 5 ], [ "eoc_vision_stun", 5 ] ]
-              }
+              { "weighted_list_eocs": [ [ "eoc_null", 10 ], [ "eoc_vision_glare", 5 ], [ "eoc_vision_stun", 5 ] ] }
             ],
             "effect": [
               { "u_message": "The world suddenly grows brighter.", "type": "mixed" },
@@ -802,7 +796,7 @@
               { "u_message": "<eyes_snail>", "snippet": true, "type": "bad" },
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 150 } ] },
               { "arithmetic": [ { "u_val": "pain" }, "+=", { "const": 15 } ] },
-              { "set_weighted_list_eocs": [ [ "eoc_null", 5 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_stun", 5 ] ] }
+              { "weighted_list_eocs": [ [ "eoc_null", 5 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_stun", 5 ] ] }
             ],
             "effect": [
               { "u_message": "Your vision flips for the last time, and you wiggle your eyestalks.", "type": "mixed" },
@@ -849,9 +843,7 @@
             "false_effect": [
               { "u_message": "<eyes_lizard>", "snippet": true, "type": "bad" },
               { "arithmetic": [ { "u_val": "stored_kcal" }, "-=", { "const": 10 } ] },
-              {
-                "set_weighted_list_eocs": [ [ "eoc_null", 10 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_glare", 5 ] ]
-              }
+              { "weighted_list_eocs": [ [ "eoc_null", 10 ], [ "eoc_vision_blind", 5 ], [ "eoc_vision_glare", 5 ] ] }
             ],
             "effect": [
               { "u_message": "Your vision fades for a moment.", "type": "mixed" },

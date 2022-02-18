@@ -145,6 +145,10 @@
   },
   {
     "type": "mutation_type",
+    "id": "ARMS"
+  },
+  {
+    "type": "mutation_type",
     "id": "HANDS"
   },
   {
