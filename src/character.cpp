@@ -7285,14 +7285,13 @@ dealt_damage_instance Character::deal_damage( Creature *source, bodypart_id bp,
 
     int recoil_mul = 100;
 
-    if( bp == body_part_eyes ) {
+    if( bp->has_type( body_part_type::type::sensor ) ) {
         if( dam > 5 || cut_dam > 0 ) {
             const time_duration minblind = std::max( 1_turns, 1_turns * ( dam + cut_dam ) / 10 );
             const time_duration maxblind = std::min( 5_turns, 1_turns * ( dam + cut_dam ) / 4 );
             add_effect( effect_blind, rng( minblind, maxblind ) );
         }
-    } else if( bp == body_part_hand_l || bp == body_part_arm_l ||
-               bp == body_part_hand_r || bp == body_part_arm_r ) {
+    } else if( bp->has_type( body_part_type::type::arm || bp->has_type( body_part_type::type::hand)) ) {
         recoil_mul = 200;
     } else if( bp == bodypart_str_id::NULL_ID() ) {
         debugmsg( "Wacky body part hit!" );
@@ -8031,18 +8030,19 @@ std::map<bodypart_id, int> Character::bonus_item_warmth() const
         ret.emplace( bp, 0 );
 
         // If the player is not wielding anything big, check if hands can be put in pockets
-        if( ( bp == body_part_hand_l || bp == body_part_hand_r ) &&
+        // Cutoff is double-sized hands, no warming your whole tentacle in your pockets
+        if( ( bp->has_type( body_part_type::type::hand || bp->hit_size < 3 ) ) &&
             weapon.volume() < 500_ml ) {
             ret[bp] += pocket_warmth;
         }
 
         // If the player's head is not encumbered, check if hood can be put up
-        if( bp == body_part_head && encumb( body_part_head ) < 10 ) {
+        if( bp->has_type( body_part_type::type::head && encumb( bp ) < 10 ) {
             ret[bp] += hood_warmth;
         }
 
         // If the player's mouth is not encumbered, check if collar can be put up
-        if( bp == body_part_mouth && encumb( body_part_mouth ) < 10 ) {
+        if( bp->has_type( body_part_type::type::mouth ) && encumb( bp ) < 10 ) {
             ret[bp] += collar_warmth;
         }
     }

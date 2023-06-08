@@ -4316,15 +4316,7 @@ void game::knockback( std::vector<tripoint> &traj, int stun, int dam_mult )
                         add_msg( _( "%s was stunned!" ), targ->get_name() );
                     }
 
-                    std::array<bodypart_id, 8> bps = {{
-                            bodypart_id( "head" ),
-                            bodypart_id( "arm_l" ), bodypart_id( "arm_r" ),
-                            bodypart_id( "hand_l" ), bodypart_id( "hand_r" ),
-                            bodypart_id( "torso" ),
-                            bodypart_id( "leg_l" ), bodypart_id( "leg_r" )
-                        }
-                    };
-                    for( const bodypart_id &bp : bps ) {
+                    for( const bodypart_id &bp : targ->get_all_body_parts( get_body_part_flags::only_main) ) {
                         if( one_in( 2 ) ) {
                             targ->deal_damage( nullptr, bp, damage_instance( damage_type::BASH, force_remaining * dam_mult ) );
                         }
@@ -4390,15 +4382,8 @@ void game::knockback( std::vector<tripoint> &traj, int stun, int dam_mult )
                                  force_remaining );
                     }
                     u.add_effect( effect_stunned, 1_turns * force_remaining );
-                    std::array<bodypart_id, 8> bps = {{
-                            bodypart_id( "head" ),
-                            bodypart_id( "arm_l" ), bodypart_id( "arm_r" ),
-                            bodypart_id( "hand_l" ), bodypart_id( "hand_r" ),
-                            bodypart_id( "torso" ),
-                            bodypart_id( "leg_l" ), bodypart_id( "leg_r" )
-                        }
-                    };
-                    for( const bodypart_id &bp : bps ) {
+
+                    for( const bodypart_id &bp : targ->get_all_body_parts( get_body_part_flags::only_main) ) {
                         if( one_in( 2 ) ) {
                             u.deal_damage( nullptr, bp, damage_instance( damage_type::BASH, force_remaining * dam_mult ) );
                         }
@@ -9410,6 +9395,7 @@ std::vector<std::string> game::get_dangerous_tile( const tripoint &dest_loc ) co
         harmful_stuff.emplace_back( tr.name() );
     }
 
+    // TODO: unhardcode
     static const std::set< bodypart_str_id > sharp_bps = {
         body_part_eyes, body_part_mouth, body_part_head,
         body_part_leg_l, body_part_leg_r, body_part_foot_l,

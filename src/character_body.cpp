@@ -732,8 +732,8 @@ void Character::update_frostbite( const bodypart_id &bp, const int FBwindPower,
     const int player_local_temp = get_weather().get_temperature( pos() );
     const int temp_after = get_part_temp_cur( bp );
 
-    if( bp == body_part_mouth || bp == body_part_foot_r ||
-        bp == body_part_foot_l || bp == body_part_hand_r || bp == body_part_hand_l ) {
+    // Frostbite only for non-tempimmune minor parts
+    if( bp->main_part != bp->id && !bp->has_flag( json_flag_IGNORE_TEMP ) ) {
         // Handle the frostbite timer
         // Need temps in F, windPower already in mph
         int wetness_percentage = 100 * get_part_wetness_percentage( bp ); // 0 - 100

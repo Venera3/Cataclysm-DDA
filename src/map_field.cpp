@@ -1486,18 +1486,30 @@ void map::player_in_field( Character &you )
             // you're certainly not standing in it.
             if( !you.in_vehicle && !you.has_trait( trait_ACIDPROOF ) ) {
                 int total_damage = 0;
-                total_damage += burn_body_part( you, cur, bodypart_id( "foot_l" ), 2 );
-                total_damage += burn_body_part( you, cur, bodypart_id( "foot_r" ), 2 );
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::foot ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
                 const bool on_ground = you.is_on_ground();
                 if( on_ground ) {
-                    // Apply the effect to the remaining body parts
-                    total_damage += burn_body_part( you, cur, bodypart_id( "leg_l" ), 2 );
-                    total_damage += burn_body_part( you, cur, bodypart_id( "leg_r" ), 2 );
-                    total_damage += burn_body_part( you, cur, bodypart_id( "hand_l" ), 2 );
-                    total_damage += burn_body_part( you, cur, bodypart_id( "hand_r" ), 2 );
-                    total_damage += burn_body_part( you, cur, bodypart_id( "torso" ), 2 );
+                    // Lying down in some form means your legs, hands and torso(s) get burned
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::leg ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
+                
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::hand ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::torso ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::tail ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
                     // Less arms = less ability to keep upright
                     if( ( !you.has_two_arms_lifting() && one_in( 4 ) ) || one_in( 2 ) ) {
+                for( const bodypart_id &bp : you.get_all_body_parts_of_type( body_part_type::type::wing ) ){
+                total_damage += burn_body_part( you, cur, bp, 2 );
+                }
                         total_damage += burn_body_part( you, cur, bodypart_id( "arm_l" ), 1 );
                         total_damage += burn_body_part( you, cur, bodypart_id( "arm_r" ), 1 );
                         total_damage += burn_body_part( you, cur, bodypart_id( "head" ), 1 );
